@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="ja"><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ShopKloset</title>
+<link rel="icon" href="./public/sk_favicon-512x512.ico" type="image/x-icon">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=M+PLUS+1:wght@100..900&family=Noto+Serif+JP:wght@200..900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Didot+LT+Pro:wght@400;700&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="./public/css/styles_ks_0926_a.css">
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/lity/2.4.1/lity.min.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lity/2.4.1/lity.min.js"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+        const menuBtn = document.getElementById("menu-toggle");
+        const nav = document.getElementById("mainNav"); 
+    
+        if (menuBtn && nav) {
+          menuBtn.addEventListener("click", function () {
+            menuBtn.classList.toggle("open");
+            nav.classList.toggle("nav-open");
+          });
+    
+          nav.querySelectorAll('.header__nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+              nav.classList.remove('nav-open');
+              menuBtn.classList.remove('open');
+            });
+          });
+        }
+      });
+</script>
+<script>
+  // 文字アニメーションの遅延を設定
+  document.addEventListener("DOMContentLoaded", function() {
+    const chars = document.querySelectorAll(".catch-copy-chars .char");
+    chars.forEach((char, index) => {
+      char.style.animationDelay = `${index * 0.05}s`;
+    });
+  });
+</script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const scroller = document.querySelector('.service__grid.message-sub');
+  const leftButton = document.querySelector('.scroll-button--left');
+  const rightButton = document.querySelector('.scroll-button--right');
+  const items = document.querySelectorAll('.service__item');
+
+  if (scroller && leftButton && rightButton && items.length) {
+    const scrollDistance = 250;
+
+    const getCurrentIndex = () => {
+      const scrollLeft = scroller.scrollLeft;
+      const itemWidth = items[0].offsetWidth + parseInt(getComputedStyle(items[0]).marginRight || 0);
+      return Math.round(scrollLeft / itemWidth);
+    };
+
+    const updateButtonVisibility = () => {
+      const scroller = document.querySelector('.service__grid.message-sub');
+      // PC (min-width: 1025px) ではボタン非表示
+      if (window.matchMedia('(min-width: 1025px)').matches) {
+        leftButton.classList.remove('is-visible');
+        rightButton.classList.remove('is-visible');
+        return;
+      }
+
+      // タブレット・モバイルではスライドの端にボタンを表示
+      const isScrollable = scroller.scrollWidth > scroller.clientWidth;
+      if (!isScrollable) {
+        leftButton.classList.remove('is-visible');
+        rightButton.classList.remove('is-visible');
+        return;
+      }
+
+      const scrollLeft = scroller.scrollLeft;
+      const scrollMax = scroller.scrollWidth - scroller.clientWidth;
+      const threshold = 10; // スクロールバーの遊びを許容する閾値
+
+      // 左ボタン
+      if (scrollLeft > threshold) {
+        leftButton.classList.add('is-visible');
+      } else {
+        leftButton.classList.remove('is-visible');
+      }
+
+      // 右ボタン
+      if (scrollLeft < scrollMax - threshold) {
+        rightButton.classList.add('is-visible');
+      } else {
+        rightButton.classList.remove('is-visible');
+      }
+    };
+
+
+    scroller.addEventListener('scroll', updateButtonVisibility);
+    window.addEventListener('resize', updateButtonVisibility);
+    updateButtonVisibility(); // 初期表示
+  }
+});
+</script>
+
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const wrapper = document.querySelector('.kv-video-wrapper');
+  const videoId = "WEscHaN7P5M";
+  const youtubeURL = `https://www.youtube.com/watch?v=${videoId}`;
+
+  // 公開チェック
+  fetch(youtubeURL, { method: "GET" })
+    .then(res => {
+      if (res.status === 200) {
+        const playBtn = wrapper.querySelector('.kv-video-play');
+        playBtn.addEventListener('click', () => {
+          wrapper.innerHTML = `
+            <iframe
+              class="kv-video"
+              src="https://www.youtube.com/embed/${videoId}?autoplay=1&mute=1&loop=1&playlist=${videoId}&playsinline=1"
+              title="Shop Kloset Official Movie"
+              style="border:none;"
+              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen
+            ></iframe>
+          `;
+        });
+      }
+    })
+    .catch(err => console.error("YouTube公開チェックエラー:", err));
+});
+
+</script>
+    
+	<script>
+  (function(w, d, t, o) {
+    w[o] = w[o] || function() { (w[o].q = w[o].q || []).push(arguments); };
+    var s = d.createElement(t);
+    s.async = 1;
+    s.src = "https://sdk-cdn.appsflyer.com/web-sdk/latest/afwebdev.min.js";
+    var f = d.getElementsByTagName(t)[0];
+    f.parentNode.insertBefore(s, f);
+
+    w[o]('init', {
+      appId: "409bdf16-28e0-4c7d-a4cc-0467e4f8c6e1",
+      useOwnRedirect: true,
+      disableRedirect: true,
+      disableAutoPageView: true
+    });
+
+    w[o]('start');
+  })(window, document, 'script', 'AF');
+</script>
+
+<style>
+  @media (max-width: 1024px) and (min-width: 769px) {
+    .footer__inner-wrap {
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1.5rem 1rem;
+      padding: 2rem 1rem;
+    }
+    .footer__group--brand,
+    .footer__group--contact,
+    .footer-address-pc,
+    .footer__group--social {
+      flex-basis: 48%;
+      justify-content: center;
+    }
+    .footer-brand-text, .footer__group--contact, .footer-address-pc {
+        font-size: 12px !important;
+    }
+    /* Order for 2x2 grid */
+    .footer__group--brand { order: 1; }
+    .footer__group--contact { order: 2; }
+    .footer-address-pc { order: 3; }
+    .footer__group--social { order: 4; }
+
+    /* Center align items within their flex container */
+    .footer__group--brand, .footer-address-pc { justify-content: flex-start; }
+    .footer__group--contact, .footer__group--social { justify-content: flex-end; }
+    .footer-address-pc {
+      text-align: left;
+    }
+
+  }
+  @media (max-width: 768px) {
+    .download-group {
+        width: 300px !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+    .download-group .download-text {
+        text-align: center;
+    }
+    .download-group .download-badges {
+        display: flex;
+        justify-content: center;
+    }
+    #message .message-about-content {
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+  }
+
+  @media (max-width: 767px) {
+    .service__grid.message-sub--two-rows { 
+      display: flex;
+      flex-direction: column;
+      height: auto;
+      overflow-y: visible;
+      overflow-x: hidden;
+      padding-bottom: 1rem;
+    }
+    .service__grid.message-sub--two-rows .service__item {
+      width: 100%;
+    }
+  }
+</style>
+</head>
+
+<body>
+  <header class="header">
+    <button class="header__menu-btn" id="menu-toggle">
+      <span class="bar">
+      </span>
+      <span class="bar">
+      </span>
+      <span class="bar">
+      </span>
+    </button>
+    <div class="header__brand-logo">
+      <a href="/">
+        <img src="./public/images/osk_logo_s.png" alt="Shop Kloset ロゴ" class="logo">
+      </a>
+    </div>
+    <nav id="mainNav" class="header__nav">
+      <a href="https://lp.shopkloset.com/" class="header__nav-link">ホーム</a>
+      <a href="https://lit.link/ShopKloset" class="header__nav-link">ShopKloset・各SNS</a>
+      <a href="https://aboutus.shopkloset.com/" class="header__nav-link">Shop Kloset Inc.</a>
+    </nav>
+  </header>
+  <main class="main-content-wrapper">
+ <section class="hero">
+      <div class="hero__bg-image">
+      </div>
+      <div class="hero__content">
+	<h1 class="catch-copy-chars">
+		<span style="display: block;">
+			<span class="char">日</span><span class="char">本</span><span class="char">の</span><span class="char">み</span><span class="char">な</span><span class="char">ら</span><span class="char">ず</span>
+		</span>
+		<span style="white-space: nowrap;">
+			<span class="char">世</span><span class="char">界</span><span class="char">に</span><span class="char">向</span><span class="char">け</span><span class="char">て</span><span class="char">販</span><span class="char">売</span><span class="char">し</span><span class="char">ま</span><span class="char">せ</span><span class="char">ん</span><span class="char">か</span><span class="char">？</span>
+		</span>
+	</h1>
+    <p class="hero__subtitle">
+      ハイブランド商品・時計・ジュエリーを<br>
+      本当に欲しがっている<br class="br-pc">
+      世界中の購入者が<br>
+      ”ShopKloset”に集まってきます！</p>
+      </div>
+    </section>
+
+
+
+<section class="message-about-section" id="aboutus">
+  <div class="message-about-header">
+    <div class="title-group">
+        <h3 class="section-subtitle serif-font-jp">ShopKlosetとは</h3>
+      <hr class="header-divider">
+    </div>
+    <div class="download-group download-group--pc">
+      <p class="download-text">アプリをダウンロードしよう</p>
+      <div class="download-badges">
+        <a href="https://shopkloset.onelink.me/5LLq" class="download-badge rounded-none overflow-hidden">
+          <img src="./public/images/App_Store.png" alt="App Storeからダウンロード" class="download-badge-icon">
+        </a>
+        <a href="https://shopkloset.onelink.me/5LLq" class="download-badge rounded-none overflow-hidden">
+          <img src="./public/images/googleplay_icon.png" alt="Google Playで手に入れよう" class="download-badge-icon">
+        </a>
+      </div>
+    </div>
+</div>
+
+    
+    
+  <div class="message-about-content">
+    <div class="message-about-text">
+    
+      <div class="about-text--mobile">
+        <p class="section-intro">
+          世界初！（＊当社調べ）<br>
+          「自国はもちろん、簡単に世界各国へ販売できる」中古品、ヴィンテージを中心としたハイブランド専門アプリ<br><br>
+          世界各国には中古品・ヴィンテージを求めるたくさんの方々がいらっしゃいます。<br>
+          ハイブランド商品（洋服、バッグ、靴など）・時計・ジュエリーを、自国に居ながら、どの場所からでも、その方たちへ簡単に販売をおこなうことができます。<br>
+          希少価値の高い、中古品・ヴィンテージ、もちろん新品もスムーズに出品することができ、マーケットを世界に広げることを可能にした画期的な新サービス、それが「ShopKloset」になります！
+        </p>
+      </div>
+      <div class="about-text--pc">
+        <p class="section-intro">
+          世界初！（＊当社調べ）<br>
+          「自国はもちろん、簡単に世界各国へ販売できる」中古品、ヴィンテージを中心としたハイブランド専門アプリ
+        </p>
+        <p class="section-intro">
+          世界各国には中古品・ヴィンテージを求めるたくさんの方々がいらっしゃいます。<br>
+          ハイブランド商品（洋服、バッグ、靴など）・時計・ジュエリーを、自国に居ながら、どの場所からでも、その方たちへ簡単に販売をおこなうことができます。<br>
+          希少価値の高い、中古品・ヴィンテージ、もちろん新品もスムーズに出品することができ、マーケットを世界に広げることを可能にした画期的な新サービス、それが「ShopKloset」になります！
+        </p>
+    </div>
+    </div>
+  </div>
+</section>
+<div class="download-group download-group--mobile mb-8">
+  <p class="download-text">アプリをダウンロードしよう</p>
+  <div class="download-badges">
+    <a href="https://apps.apple.com/app/id6751567844" class="download-badge rounded-none overflow-hidden">
+      <img src="./public/images/App_Store.png" alt="App Storeからダウンロード" class="download-badge-icon">
+    </a>
+    <a href="https://play.google.com/store/apps/details?id=com.shopkloset.shopkloset" class="download-badge rounded-none overflow-hidden">
+      <img src="./public/images/googleplay_icon.png" alt="Google Playで手に入れよう" class="download-badge-icon">
+    </a>
+  </div>
+</div>
+
+<div class="campaign-render-box">
+  <div class="bg-product bg-left"><img src="./public/images/campaign_a.png" alt=""></div>
+  <div class="bg-product bg-right"><img src="./public/images/campaign_b.jpg" alt=""></div>
+
+  <div class="render-content-main">
+    <h1 class="render-label-top-fixed">
+      「オープン＆スタート<br class="sp-only-br">キャンペーン！」<br class="sp-only-br">第一弾！
+    </h1>
+    
+    <div class="render-middle-center">
+      <div class="render-catch-part">
+        一生に一度しかない、前代未聞のキャンペーンです。<br>
+        超希少なハイブランド商品が、全て1円になります！！
+      </div>
+      
+      <div class="render-price-part">
+        <span class="sparkle-container">
+          <span class="diamond-text">1</span>
+          <span class="glitter-star s1"></span>
+          <span class="glitter-star s2"></span>
+          <span class="glitter-star s3"></span>
+          <span class="glitter-star s4"></span>
+          <span class="glitter-star s5"></span>
+        </span>
+        <span class="gold-text-shiny">円！</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="render-notes-container">
+    <div class="notes-side-title">補足／注意事項</div>
+    <div class="notes-side-body">
+      <p>※ ShopKlosetのサブスク登録していただいた会員様限定のキャンペーンになります。</p>
+      <p>※ キャンペーン当選者様は、ご本人のSNSにて「開封式」を行い、ご投稿いただくことを了承していただきます。</p>
+      <p>※ 全て本物の商品ですが、返品や商品に対するクレームは受け付けておりません。</p>
+    </div>
+  </div>
+</div>
+      
+
+<div class="kv-video-wrapper bg-black">
+  <!-- 公開前はサムネ＋再生ボタン -->
+  <img
+    class="kv-video-thumb"
+    src="https://img.youtube.com/vi/z_qa6P6gXf8/maxresdefault.jpg"
+    alt="YouTube Thumbnail"
+  />
+  <button class="kv-video-play" aria-label="再生">
+    <span class="play-icon"></span>
+  </button>
+</div>
+
+
+      
+<section class="message-about-section mt-10" id="message">
+  <div class="message-about-header">
+	  
+    <div class="title-group">
+            <h3 class="section-subtitle serif-font-jp">ハイブランドリユースショップ様</h3>
+      <hr class="header-divider">
+    </div>
+    <div class="download-group download-group--reuse-pc">
+      <p class="download-text">アプリをダウンロードしよう</p>
+      <div class="download-badges">
+        <a href="https://apps.apple.com/app/id6751567844" class="download-badge rounded-none overflow-hidden">
+          <img src="./public/images/App_Store.png" alt="App Storeからダウンロード" class="download-badge-icon">
+        </a>
+        <a href="https://play.google.com/store/apps/details?id=com.shopkloset.shopkloset" class="download-badge rounded-none overflow-hidden">
+          <img src="./public/images/googleplay_icon.png" alt="Google Playで手に入れよう" class="download-badge-icon">
+        </a>
+      </div>
+    </div>
+</div>
+
+
+  <div class="message-about-content">
+    <div class="message-about-text">
+
+      <p class="section-intro" style="margin-top: 2rem;">
+        お金をかけ、在庫、店舗の物件探し様々な労力をかけてやるよりも「ShopKloset」を通じて世界に販売し、店舗をお持ちの方もお持ちじゃない方も売上と利益を上げませんか。<br class="br-pc">「ShopKloset」ではハイブランドの中古だけではなく新品はもちろんのこと、ジュエリー、時計なども取り扱い可能です。
+      </p>
+      <p class="section-intro">
+        「日本のリユース文化を世界へ。新たな成長戦略のご提案」
+      </p>
+      <p class="section-intro">
+        国内のリユース・ヴィンテージ市場、中古ブランドショップはとても成熟し、売上・利益の飛躍的な向上が難しい限界値にきているかと思われます。
+      </p>
+      <p class="section-intro">
+        しかし、これは限界ではなく、次なるステージへの転換期だと捉えています。 私たちが誇るべき「リユースを大切にする日本の文化」の象徴である、「質の高い日本のリユース品」は、世界に通用する大きなポテンシャルを秘めています。 これからは、その価値を海外市場へと展開し、新たな収益の柱を育てていくべき時が来ています。
+      </p>
+      <p class="section-intro">
+        売上拡大と共に、日本の素敵な文化を世界に発信し、多くの人の共感を得るという、より大きな意義を持つ挑戦です。 事業の成長と文化の浸透を両立させて、「ShopKloset」と未来を共に切り拓いていきませんか？
+      </p>
+      <div class="additional-text--pc">
+        <p class="section-intro">
+          日本国内はもちろん、アメリカ、イギリス、フランス、イタリアなどの世界数十ヵ国でも、広告展開を行い、多くのユーザーを獲得いたします。 世界中の洗練された人々が注目する「ShopKloset」、法人様・個人事業主様にとっての新たな販促チャネルとして、ぜひご利用ください。<br>
+          今後、数百億円の広告費を費やしていく予定でございます。
+        </p>
+        <p class="section-intro">
+          販売者様が広告費用をかけなくても、「ShopKloset」が世界規模で大々的に広告展開をいたしますので、「ShopKloset」に登録することで世界各国に販売者様や取扱商品を知っていただけるかと思います！「ShopKloset」が販売者の皆様を全力でサポートしますので、ぜひダウンロードとご登録を！
+        </p>
+        <!-- ↓↓↓ PC/タブレット用の署名を追加 ↓↓↓ -->
+        <div class="closing-remark">
+          <hr class="closing-remark__line">
+          <span class="closing-remark__text">皆　様　に　愛　を　込　め　て</span>
+        </div>
+        <p class="section-intro" style="margin-top: 2rem;">
+          「ShopKloset」では、それぞれのオフィシャルSNSで異なった「お得情報」や、「キャンペーン」情報を発信していきます。<br>
+          InstagramではInstagramでしか見られないお得な情報となり、その情報は他のSNS（XやTikTok）には投稿いたしません。<br>
+          XやTikTokも同様に、XはXでしか見られないお得な情報、TikTokはTikTokでしか見られないお得な情報となるため、お得な情報やキャンペーンを逃さないよう、すべてのSNSをフォローしてください。
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="download-group download-group--reuse-mobile">
+    <p class="download-text">アプリをダウンロードしよう</p>
+    <div class="download-badges">
+      <a href="https://apps.apple.com/app/id6751567844" class="download-badge rounded-none overflow-hidden">
+        <img src="./public/images/App_Store.png" alt="App Storeからダウンロード" class="download-badge-icon">
+      </a>
+      <a href="https://play.google.com/store/apps/details?id=com.shopkloset.shopkloset" class="download-badge rounded-none overflow-hidden">
+        <img src="./public/images/googleplay_icon.png" alt="Google Playで手に入れよう" class="download-badge-icon">
+      </a>
+    </div>
+  </div>
+  <div class="additional-text--mobile mt-8">
+    <p class="section-intro">
+      日本国内はもちろん、アメリカ、イギリス、フランス、イタリアなどの世界数十ヵ国でも、広告展開を行い、多くのユーザーを獲得いたします。 世界中の洗練された人々が注目する「ShopKloset」、法人様・個人事業主様にとっての新たな販促チャネルとして、ぜひご利用ください。<br>
+      今後、数百億円の広告費を費やしていく予定でございます。
+    </p>
+    <p class="section-intro">
+      販売者様が広告費用をかけなくても、 「ShopKloset」が世界規模で大々的に広告展開をいたしますので、「ShopKloset」に登録することで世界各国に販売者様や取扱商品を知っていただけるかと思います! 「ShopKloset」販売者の皆様を全力でサポートしますので、ぜひダウンロードとご登録を!
+    </p>
+    <div class="closing-remark">
+      <hr class="closing-remark__line">
+      <span class="closing-remark__text">皆 様 に 愛 を 込 め て</span>
+    </div>
+    <p class="section-intro" style="margin-top: 2rem;">
+      「ShopKloset」では、それぞれのオフィシャルSNSで異なった「お得情報」や、「キャンペーン」情報を発信していきます。<br>
+      InstagramではInstagramでしか見れないお得な情報となり、その情報は他のSNS（XやTikTok）には投稿いたしません。<br>
+      XやTikTokも同様に、XはXでしか見れないお得な情報、TikTokはTikTokでしか見れないお得な情報となるため、お得な情報やキャンペーンを逃さないよう、すべてのSNSをフォローしてください。
+    </p>
+  </div>
+</section>
+
+		
+<div class="section__content">
+  <div class="scroller-container">
+  <div class="service__grid message-sub message-sub--two-rows">
+      <div class="service__item service__item--top"> <!-- 「■ラグジュアリーブランドが勢ぞろい」を含む要素 -->
+        <div class="service__image service__image--circle service__image--message-sub-1">
+        </div>
+        <div class="service__text-block service__text-block--two-cols">
+          <div class="text-col">
+            <ul class="service__item-list">
+              <li>
+                <span class="service__item-heading">■取扱アイテム</span>
+                <p>洋服、バッグ、時計、ジュエリー、小物など</p>
+              </li>
+              <li>
+                <span class="service__item-heading">■取り扱いカテゴリ</span>
+                <p>レディースファッション、メンズファッション</p>
+              </li>
+            </ul>
+          </div>
+          <div class="text-col">
+            <ul class="service__item-list">
+              <li>
+                <span class="service__item-heading">■ラグジュアリーブランドが勢ぞろい</span>
+              </li>
+              <li>
+                <span class="service__item-heading">■こんなアイテムをお探しの方におすすめいたします。</span>
+                <ul style="margin-top: 0.5rem;">
+                  <li>すでに欲しい商品が、完売しており、在庫を探している方</li>
+                  <li>人気商品で在庫が少ないレアアイテムをお探しの方</li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="service__item service__item--bottom"> <!-- 「■取り扱いブランド」を含む要素 -->
+        <div class="service__image service__image--circle service__image--message-sub-2">
+        </div>
+        <div class="service__text-block">
+          <ul class="service__item-list">
+            <li>
+              <span class="service__item-heading">■取り扱いブランド</span>
+              <p class="brand-list">
+ALEXANDER McQUEEN, Balenciaga, BALMAIN, BERLUTI, Bottega Veneta, CELINE, CHANEL, Chloé, Christian Louboutin, CHROME HEARTS, Dior, DOLCE&GABBANA, EMILIO PUCCI, FENDI, Ferragamo, Giorgio Armani, GIVENCHY, Maison Goyard, GUCCI, JIL SANDER, LOEWE, LOUIS VUITTON, Maison Margiela, MONCLER, PRADA, Roberto Cavalli, Saint Laurent, Thom Browne, TOM FORD, VALENTINO, VERSACE, ZEGNA etc…
+              </p>
+              <p class="brand-list">
+BACKES&STRAUSS, BOUCHERON, Buccellati, BVLGARI, Cartier, CHAUMET, Chopard, DeBeers, GRAFF, HARRY WINSTON, MELLERIO, Piaget, Tiffany & Co., Ugo Cacciatori, Van Cleef & Arpels, Vivienne Westwood etc…
+              </p>
+              <p class="brand-list">
+Audemars Piguet, A.Lange & Söhne, Blancpain, Breguet, BREITLING, Franck Muller, Girard-Perregaux, HUBLOT, IWC, Jacob & Co. , Jaeger-LeCoultre, OMEGA, PANERAI, Patek Philippe, Richard Mille, Roger Dubuis, ROLEX, , Vacheron Constantin, ZENITH etc…
+              </p>
+            </li>
+          </ul>
+        </div>
+      </div>
+     </div>
+    <button class="scroll-button scroll-button--left " aria-label="Previous">
+      <i class="fa-solid fa-chevron-left"></i>
+    </button>
+    <button class="scroll-button scroll-button--right" aria-label="Next">
+      <i class="fa-solid fa-chevron-right"></i>
+    </button>
+  </div>
+</div>
+	  
+  </main>
+    
+  <footer class="site-footer">
+    <div class="footer__inner-wrap" style="gap: clamp(0.5rem, 2vw, 1.5rem); align-items: center; flex-wrap: wrap; justify-content: center; flex-direction: column;">
+        <div style="display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: clamp(0.5rem, 2vw, 1.5rem); width: 100%;">
+            <div class="footer__group footer__group--brand" style="align-items: center;">
+                <a href="#" class="footer-logo" style="flex-shrink: 0;"><img src="./public/images/sk_logomark.png" alt="Shop Kloset Logo" style="height: clamp(40px, 5vw, 50px);"></a>
+                <div class="footer-brand-text" style="font-size: clamp(8px, 1vw, 10px); flex-shrink: 0;">
+                    <p class="footer-trademark">日本のみならず世界数十ヵ国で商標登録出願中</p>
+                    <p class="footer-copyright">© 2025 Shop Kloset Inc.</p>
+                    </div>
+            </div>
+
+            <div class="footer__group footer__group--essential-nav">
+                <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; justify-content: center; gap: 0 1rem; font-size: clamp(10px, 1.2vw, 12px);">
+                    <li><a href="https://aboutus.shopkloset.com/about" target="_blank" style="text-decoration: none; color: inherit;">会社概要</a></li>
+        <li><a href="https://aboutus.shopkloset.com/privacypolicy" target="_blank" style="text-decoration: none; color: inherit;">プライバシーポリシー</a></li>
+        <li><a href="./public/pdf/CookiePolicy_Japanese.pdf" data-lity style="text-decoration: none; color: inherit;">クッキー（Cookie）の利用について</a></li>
+        <li><a href="commerce-disclosure.html" style="text-decoration: none; color: inherit;">特定商取引法に関する表記</a></li>
+        <li><a href="terms-of-service.html" style="text-decoration: none; color: inherit;">利用規約</a></li>
+
+                </ul>
+            </div>
+            <div class="footer__group footer__group--contact" style="font-size: clamp(10px, 1.2vw, 12px);">
+               <a href="mailto:info@shopkloset.com" class="contact-email">
+                    <span class="dli-mail"></span>
+                    <div>
+                        <p class="contact-title" style="font-size: clamp(11px, 1.4vw, 14px);">お問合せ/CONTACT</p>
+                        <p class="contact-address" style="font-size: clamp(10px, 1.2vw, 12px);">info@shopkloset.com</p>
+                    </div>
+               </a>
+            </div>
+
+            <div class="footer__group footer-address-pc" style="font-size: clamp(10px, 1.2vw, 12px); line-height: 1.5; text-align: center;">
+                 <p class="company-name-tel"><span style="font-size: clamp(11px, 1.4vw, 14px); font-weight: bold;">Shop Kloset Inc.</span></p>
+                 <p>〒150-0041 東京都渋谷区神南1-16-7</p>
+                 <p>パークウェースクエア′1 2階</p>
+                 <p>Tel. ０３ー３４６３−３８１８</p>
+            </div>
+
+            <div class="footer__group footer__group--social" style="flex-shrink: 0;">
+                <div class="social-links-wrapper">
+                    <a href="https://www.instagram.com/shopkloset_official" class="social-icon" aria-label="Instagram"><img src="./public/images/ww_social_instagram.png" alt="Instagram" class="h-6"></a>
+                    <a href="https://x.com/ShopKloset" class="social-icon" aria-label="X (Twitter)"><img src="./public/images/ww_social_x_twitter_w.png" alt="X" class="h-6"></a>
+                    <a href="https://www.tiktok.com/@shopkloset_official" class="social-icon" aria-label="TikTok"><img src="./public/images/ww_social_tiktok.png" alt="TikTok" class="h-6"></a>
+                    <a href="https://www.youtube.com/@ShopKloset" class="social-icon" aria-label="YouTube"><img src="./public/images/ww_social_youtube.png" alt="YouTube" class="h-6"></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer__group footer__group--license" style="font-size: clamp(8px, 1vw, 10px); text-align: center; width: 100%; margin-top: 1rem;">
+            <p class="footer-kobutsusho">古物商免許 東京都公安委員会 第 303272419438 号</p>
+        </div>
+    </div>
+</footer>
+</body>
+</html>
