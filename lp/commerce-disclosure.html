@@ -1,52 +1,42 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-        <!-- Google Tag Manager -->
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
     new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
     j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
     })(window,document,'script','dataLayer','GTM-T56J8N3S');</script>
-    <!-- End Google Tag Manager -->
-    
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>特定商取引法に基づく表記</title>
     <style>
-        /* ユーザー様ご指定の基本スタイル（参照元サイトの分析に基づく） */
         body {
             font-family: "Yu Gothic", "游ゴシック", "游ゴシック体", "YuGothic", sans-serif;
-            font-size: 17px; /* サイズ */
-            line-height: 1.8; /* 行間 */
+            font-size: 17px; 
+            line-height: 1.8; 
             color: #333;
-            font-weight: 500; /* ミディアムの太さ */
-            
-            /* LAYOUT: bodyは画面全体を使用し、マージン・パディングをリセット */
+            font-weight: 500; 
             margin: 0; 
             padding: 0; 
             min-height: 100vh;
             position: relative;
         }
         
-        /* ページ全体のコンテンツをラップするコンテナ（本文と連絡先） */
         .content-wrapper {
-            /* max-widthとpaddingをここに適用し、中央寄せと左右の余白を確保 */
             max-width: 800px;
             margin: 0 auto;
             padding: 20px;
-            /* コピーライト部分（黒帯）の高さ分、コンテンツの下に余白を空ける */
-            padding-bottom: 100px; 
+            padding-bottom: 120px; /* フッターと重ならないよう少し余裕を持たせました */
         }
         
-        /* ページタイトル */
         h1 {
             text-align: center;
             font-size: 28px; 
-            margin-top: 0;
+            margin-top: 20px;
             margin-bottom: 30px;
             font-weight: bold; 
         }
-        /* セクションタイトル */
+
         h2 {
             font-size: 20px;
             margin-top: 30px;
@@ -54,66 +44,69 @@
             font-weight: bold; 
         }
         
-        /* 厳密な余白リセット */
         p, ul, li, address { 
             margin: 0; 
             padding: 0;
         }
 
-        /* 💡 1. 条文見出しのスタイルと余白制御 (太字なし) */
         .chapter-title {
-            margin-top: 20px;       /* 見出しの上を空ける */
-            margin-bottom: 0;        /* 見出しの下は詰める */
-            font-weight: bold; /* 特定商取引法では項目名を太字にすると見やすいため変更 */
+            margin-top: 30px;
+            margin-bottom: 5px;
+            font-weight: bold;
         }
 
-        /* 💡 2. 本文・リストの後の空き */
-        p.section-text, ul.list {
-            margin-bottom: 20px; /* 条文本文の後に1行空きを追加 */
+        .section-text {
+            margin-bottom: 15px;
+        }
+
+        /* 櫻井さんの指示：極小サイズ用のクラス */
+        .small-text {
+            font-size: 11px; /* キャンペーン規約相当のサイズ */
+            color: #666;    /* 少し色を薄くすると、より「注釈」感が出ます */
         }
         
-        /* 3. リストの形式（◾️ 形式を再現） */
         ul.list {
-            list-style-type: none; /* 連番を無効化 */
-            padding-left: 0;       /* インデントを削除 */
-            margin-top: 10px;      /* 見出しとリストの間は少し空ける */
+            list-style-type: none;
+            padding-left: 0; 
+            margin-bottom: 20px;
         }
         ul.list li {
-            text-indent: -1.8em;   /* リスト項目を左に寄せ、記号分を空ける */
-            padding-left: 1.8em;   /* テキストが揃うようにインデント */
+            text-indent: -1.2em;
+            padding-left: 1.2em;
+            margin-top: 10px;
         }
+
+        .indent-1 { text-indent: 1em; margin-bottom: 10px; display: block; }
+        .indent-2 { text-indent: 2em; margin-bottom: 10px; display: block; }
         
-        /* 4. 連絡先とコピーライトの調整 */
         address {
             font-style: normal;
-            margin-top: 20px;
-            margin-bottom: 0; 
-        }
-        address br {
-            line-height: 1.5;
+            margin-top: 40px;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border: 1px solid #eee;
         }
         
-        /* 💡 コピーライトコンテナ（黒帯本体）: 画面最下部に固定し、全幅を確保 */
         .copyright-container {
             position: absolute; 
             bottom: 0;
-            width: 100%; /* bodyの幅（全画面幅）を使用 */
-            background-color: #333; /* 背景を黒に */
+            width: 100%;
+            background-color: #333;
         }
         
-        /* コピーライトのテキスト: 黒帯の中で中央に寄せ、左右にパディングを適用 */
         p.copyright {
-            margin: 0 auto; /* テキストブロックを中央寄せ */
-            max-width: 800px; /* 本文と同じ幅に制限 */
+            margin: 0 auto;
+            max-width: 800px;
             text-align: center; 
-            font-size: 15px; 
-            color: #fff; /* 文字を白に */
-            padding: 15px 20px; /* 上下のパディングを追加し、左右のテキスト余白を確保 */
+            font-size: 13px; 
+            color: #fff;
+            padding: 20px;
         }
     </style>
 </head>
 <body>
-    
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T56J8N3S"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="content-wrapper">
         <h1>特定商取引法に関する表記</h1>
         
@@ -124,67 +117,66 @@
         <p class="chapter-title">＜役務の対価および販売価格＞</p>
         <p class="section-text">（1）手数料</p>
         <ul class="list">
-            <li>◾️ 購入する場合</li>
-            <p class="section-text" style="text-indent: 1em;">出品者様が提供する商品の価格に応じて当社所定のシステム利用料４.８％がかかります。＊サブスクリプションに加入の購入者の方は、毎回のお買い物からシステム利用料１.８％の割引を受けられます。</p>
-            
-            <li>◾️ 販売する場合</li>
-            <p class="section-text" style="text-indent: 1em;">出品会員が提供する商品価格に対して、当社所定の成約手数料４.８％がかかります。</p>
-            <p class="section-text" style="text-indent: 1em;">また、出品会員に送金を行う場合、PayPal所定の振込手数料もかかります。</p>
-            <p class="section-text" style="text-indent: 1em;">※ 上記の対価を受け取るにあたり、会員が負担すべき税金で当社が納税義務を負うもの（消費税等）がある場合、上記の対価は当該税金も含んだ金額とします。</p>
+            <li>◾️ 購入する場合
+                <span class="indent-1">出品者様が提供する商品の価格に応じて当社所定のシステム利用料４.８％がかかります。＊サブスクリプションに加入の購入者の方は、毎回のお買い物からシステム利用料１.８％の割引を受けられます。</span>
+            </li>
+            <li>◾️ 販売する場合
+                <span class="indent-1">出品会員が提供する商品価格に対して、当社所定の成約手数料４.８％がかかります。</span>
+                <span class="indent-1">また、出品会員に送金を行う場合、PayPal所定の振込手数料もかかります。</span>
+                <span class="indent-1 small-text">※ 上記の対価を受け取るにあたり、会員が負担すべき税金で当社が納税義務を負うもの（消費税等）がある場合、上記の対価は当該税金も含んだ金額とします。</span>
+            </li>
         </ul>
+
         <p class="section-text">（2）当社が販売している商品の販売価格</p>
         <p class="section-text">当社が販売する商品の販売価格は、表示された金額（表示価格/税込み）とし、表示通貨は日本円（JPY）となります。なお、(1)の手数料は別途発生いたしますのでご了承ください。※配送価格は商品価格に含めて表示</p>
 
         <p class="chapter-title">＜代金（対価）の支払時期、方法＞</p>
         <p class="section-text">（１）支払い方法</p>
         <ul class="list">
-            <li>◾️ 購入する場合</li>
-            <p class="section-text" style="text-indent: 1em;">PayPalアカウントの登録が’必要となります。PayPalで使用可能な支払い方法はクレジットカード、デビットカード、銀行口座となります。PayPalでの使用可能な支払い方法の詳細は<a href="https://www.paypal.com/jp/webapps/mpp/personal/how-paypal-works?locale.x=ja_JP">こちら（ https://www.paypal.com/jp/webapps/mpp/personal/how-paypal-works?locale.x=ja_JP</a> ）</p>
-
-            <li>◾️ 販売する場合</li>
-            <p class="section-text" style="text-indent: 1em;">PayPalアカウントの登録が’必要となります。PatPalからPayPal所定の振込手数料を差し引いた商品代金をお支払い後、当社のシステム利用料をご請求し差し引かせていただきます。</p>
+            <li>◾️ 購入する場合
+                <span class="indent-1">PayPalアカウントの登録が必要となります。PayPalで使用可能な支払い方法はクレジットカード、デビットカード、銀行口座となります。詳細は<a href="https://www.paypal.com/jp/webapps/mpp/personal/how-paypal-works?locale.x=ja_JP">こちら</a>をご参照ください。</span>
+            </li>
+            <li>◾️ 販売する場合
+                <span class="indent-1">PayPalアカウントの登録が必要となります。PayPalからPayPal所定の振込手数料を差し引いた商品代金をお支払い後、当社のシステム利用料をご請求し差し引かせていただきます。</span>
+            </li>
         </ul>
-        <p class="section-text">（2）支払時期</p>
-        <ul class="list">
-            <li>◾️ 購入した場合</li>
-            <p class="section-text" style="text-indent: 1em;">**クレジットカード**</p>
-            <p class="section-text" style="text-indent: 2em;">原則、取引完了処理が行われた時点。ただし、支払方法として選択されたカードに対して注文時に与信枠の確保を行ないます。なお、注文後に取引完了またはキャンセル処理が成されない取引のうち、与信枠の確保期限が迫り、かつ、当社にて与信枠の再確保ができない取引については、与信枠の再確保が失敗した時点でカードへ請求処理を行います。なお、引き落とし日はお使いのカードによって異なります。銀行口座に関する詳細はPayPalの<a href="https://www.paypal.com/jp/webapps/mpp/support/set-up-bank?locale.x=ja_JP">銀行口座の登録方法</a>をご確認ください。（ <a href="https://www.paypal.com/jp/webapps/mpp/support/set-up-bank?locale.x=ja_JP">https://www.paypal.com/jp/webapps/mpp/support/set-up-bank?locale.x=ja_JP</a> ）</p>
 
-            <li>◾️ 販売した場合</li>
-            <p class="section-text" style="text-indent: 1em;">商品到着処理を行った時点でお支払いが確定します。商品代金の振込は、お支払い確定後にPayPalアカウントへお支払いされます。</p>
+        <p class="chapter-title">（2）支払時期</p>
+        <ul class="list">
+            <li>◾️ 購入した場合
+                <span class="indent-1"><strong>クレジットカード</strong></span>
+                <span class="indent-2">原則、取引完了処理が行われた時点。ただし、支払方法として選択されたカードに対して注文時に与信枠の確保を行ないます。なお、引き落とし日はお使いのカードによって異なります。銀行口座に関する詳細はPayPalの<a href="https://www.paypal.com/jp/webapps/mpp/support/set-up-bank?locale.x=ja_JP">規約</a>をご確認ください。</span>
+            </li>
+            <li>◾️ 販売した場合
+                <span class="indent-1">商品到着処理を行った時点でお支払いが確定します。商品代金の振込は、お支払い確定後にPayPalアカウントへお支払いされます。</span>
+            </li>
         </ul>
 
         <p class="chapter-title">＜役務または商品の引渡時期＞</p>
         <p class="section-text">（１）手数料</p>
-        <p class="section-text" style="text-indent: 1em;">品の取引完了処理が行われた時点</p>
+        <p class="section-text" style="text-indent: 1em;">商品の取引完了処理が行われた時点</p>
         
         <p class="chapter-title">（２）返品についての特約に関する事項</p>
         <p class="section-text">返品には応じません。</p>
 
         <p class="chapter-title">（３）当社が販売している商品の売買契約の解除に関する事項</p>
-        <p class="section-text">当社による売買契約の解除に関しては、 <a href="terms-of-service.html">ShopKloset 利用規約第 17 条第 2 項及び第 3 項</a>をご参照ください。<br>
+        <p class="section-text">当社による売買契約の解除に関しては、 <a href="terms-of-service.html">ShopKloset 利用規約第 17 条第 2 項及び第 3 項</a>をご参照ください。</p>
 
         <p class="chapter-title">（４）事業者の名称および連絡先</p>
         <address>
             Shop Kloset株式会社<br>
             代表取締役　櫻井邦幸<br>
-            〒150-0041　東京都渋谷区神南1-16-7 パークウェースクエア’1 2階<br>
+            〒150-0041　東京都渋谷区神南1-16-7 パークウェースクエア1 2階<br>
             <br>
-            お問い合わせ<br>
-            メールでのお問合せについて<br>
+            <strong>お問い合わせ</strong><br>
             受付時間　平日 10:00～18:00（土・日・祝休）<br>
-            ・ ShopKlosetカスタマーサポート： <a href="mailto:support@shopkloset.com">support@shopkloset.com</a><br>
-            ※ShopKlosetカスタマーサポート： support@shopkloset.com ※【@shopkloset.com】からのメールを受信できるようご確認ください。
+            ・ShopKlosetカスタマーサポート： <a href="mailto:support@shopkloset.com">support@shopkloset.com</a><br>
+            <span class="small-text">※【@shopkloset.com】からのメールを受信できるようご確認ください。</span>
         </address>
     </div>
 
     <div class="copyright-container">
         <p class="copyright">Copyright ©2025 Shop Kloset Inc. All rights reserved.</p>
     </div>
-
 </body>
-
 </html>
-
-
-
