@@ -17,7 +17,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=M+PLUS+1:wght@100..900&family=Noto+Serif+JP:wght@200..900&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Didot+LT+Pro:wght@400;700&display=swap" rel="stylesheet">
 <script src="https://cdn.tailwindcss.com"></script>
-<link rel="stylesheet" href="./public/css/styles_ks_0926.css">
+<link rel="stylesheet" href="./public/css/styles_ks_0123.css">
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/lity/2.4.1/lity.min.css" rel="stylesheet">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/lity/2.4.1/lity.min.js"></script>
@@ -109,57 +109,30 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 });
 </script>
-
-
 <script>
 document.addEventListener('DOMContentLoaded', () => {
   const wrapper = document.querySelector('.kv-video-wrapper');
-  const videoId = "WEscHaN7P5M";
-  const youtubeURL = `https://www.youtube.com/watch?v=${videoId}`;
+  if (!wrapper) return; // 安全ガード
 
-  // 公開チェック
-  fetch(youtubeURL, { method: "GET" })
-    .then(res => {
-      if (res.status === 200) {
-        const playBtn = wrapper.querySelector('.kv-video-play');
-        playBtn.addEventListener('click', () => {
-          wrapper.innerHTML = `
-            <iframe
-              class="kv-video"
-              src="https://www.youtube.com/embed/${videoId}?autoplay=1&mute=1&loop=1&playlist=${videoId}&playsinline=1"
-              title="Shop Kloset Official Movie"
-              style="border:none;"
-              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture; web-share"
-              allowfullscreen
-            ></iframe>
-          `;
-        });
-      }
-    })
-    .catch(err => console.error("YouTube公開チェックエラー:", err));
+  const videoId = "VSZBZJKI69E";
+
+  const playBtn = wrapper.querySelector('.kv-video-play');
+  if (!playBtn) return; // これもガード
+
+  playBtn.addEventListener('click', () => {
+    wrapper.innerHTML = `
+      <iframe
+        class="kv-video"
+        src="https://www.youtube.com/embed/${videoId}?autoplay=1&mute=1&loop=1&playlist=${videoId}&playsinline=1"
+        title="Shop Kloset Official Movie"
+        style="border:none;"
+        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen
+      ></iframe>
+    `;
+  });
 });
-
 </script>
-    
-<!-- <script>
-  (function(w, d, t, o) {
-    w[o] = w[o] || function() { (w[o].q = w[o].q || []).push(arguments); };
-    var s = d.createElement(t);
-    s.async = 1;
-    s.src = "https://sdk-cdn.appsflyer.com/web-sdk/latest/afwebdev.min.js";
-    var f = d.getElementsByTagName(t)[0];
-    f.parentNode.insertBefore(s, f);
-
-    w[o]('init', {
-      appId: "409bdf16-28e0-4c7d-a4cc-0467e4f8c6e1",
-      useOwnRedirect: true,
-      disableRedirect: true,
-      disableAutoPageView: true
-    });
-
-    w[o]('start');
-  })(window, document, 'script', 'AF');
-</script> -->
 
 <style>
   @media (max-width: 1024px) and (min-width: 769px) {
@@ -184,8 +157,6 @@ document.addEventListener('DOMContentLoaded', () => {
     .footer__group--contact { order: 2; }
     .footer-address-pc { order: 3; }
     .footer__group--social { order: 4; }
-
-    /* Center align items within their flex container */
     .footer__group--brand, .footer-address-pc { justify-content: flex-start; }
     .footer__group--contact, .footer__group--social { justify-content: flex-end; }
     .footer-address-pc {
@@ -334,16 +305,79 @@ document.addEventListener('DOMContentLoaded', () => {
       
 
 <div class="kv-video-wrapper bg-black">
-  <!-- 公開前はサムネ＋再生ボタン -->
   <img
     class="kv-video-thumb"
-    src="https://img.youtube.com/vi/z_qa6P6gXf8/maxresdefault.jpg"
+    src="https://img.youtube.com/vi/VSZBZJKI69E/hqdefault.jpg"
     alt="YouTube Thumbnail">
   <button class="kv-video-play" aria-label="再生">
     <span class="play-icon"></span>
   </button>
 </div>
 
+
+<!-- ▼▼ キャンペーン画像＋参加規約セクション ▼▼ -->
+<section class="campaign-section">
+
+  <!-- 画像エリア -->
+  <div class="campaign-images">
+    <img src="./public/images/campaign.png" alt="" />
+  </div>
+
+  <!-- 規約ボックス -->
+  <div class="campaign-terms">
+<h3 class="campaign-terms__title">■ 参加規約・注意事項</h3>
+
+<p class="campaign-terms__lead">
+  本キャンペーンは非常に希少な商品を破格で提供するため、
+  以下の条件を全て満たす方のみが対象となります。
+</p>
+
+<hr class="campaign-terms__rule">
+
+    <ul>
+      <li>
+        <strong>会員様限定キャンペーン</strong><br>
+        Shopklosetのサブスクリプション登録をしていただいた会員様限定のキャンペーンとなります。
+        未登録の方はご参加いただけませんのでご了承ください。
+      </li>
+
+      <li>
+        <strong>SNSでの「開封式」投稿が必須</strong><br>
+        当選者様は、商品到着後にご本人のSNS（YouTube / Instagram / X / TikTok）にて、
+        「開封式」の様子をご投稿いただくことを条件とさせていただきます。
+        SNS投稿を行わない場合、または確認ができない場合は、商品を返品していただく規約となります。
+      </li>
+
+      <li>
+        <strong>商品の品質と返品について</strong><br>
+        商品は全て鑑定済みの本物ですが、特別キャンペーン品のため、
+        返品や商品に対するクレームは一切受け付けておりません。
+        予めご了承の上ご応募ください。
+      </li>
+
+      <li>
+        弊社から、当選者様へ特別な確認用メールアドレスをお送りしますので、
+        ご使用になっているSNSアカウントを記載いただき、ご返信をお願いいたします。
+        お持ちのSNSアカウントがない場合は、新規に作成いただくことになります。
+      </li>
+
+      <li>
+        当選者様のSNSへ投稿された投稿画面、及び素材については、
+        弊社の広告やオフィシャルWEBサイト等に使用させていただく許諾承認していただきます。
+      </li>
+<li>
+キャンペーン当選者様においては、「1円で購入する」ことが可能となりますが、当選者様が在住されている国によって、
+その商品に関税が課される場合がございます。その場合の関税及び税金については、購入者様のご負担となることをご了承ください。
+	</li>	
+    </ul>
+
+    <p class="campaign-terms__closing">
+      ShopKlosetより「愛を込めて」！
+    </p>
+  </div>
+
+</section>
+<!-- ▲▲ キャンペーン画像＋参加規約セクション ▲▲ -->
 
       
 <section class="message-about-section mt-10" id="message">
@@ -433,6 +467,7 @@ document.addEventListener('DOMContentLoaded', () => {
       「ShopKloset」では、それぞれのオフィシャルSNSで異なった「お得情報」や、「キャンペーン」情報を発信していきます。<br>
       InstagramではInstagramでしか見れないお得な情報となり、その情報は他のSNS（XやTikTok）には投稿いたしません。<br>
       XやTikTokも同様に、XはXでしか見れないお得な情報、TikTokはTikTokでしか見れないお得な情報となるため、お得な情報やキャンペーンを逃さないよう、すべてのSNSをフォローしてください。
+		
     </p>
   </div>
 </section>
@@ -464,7 +499,7 @@ document.addEventListener('DOMContentLoaded', () => {
               </li>
               <li>
                 <span class="service__item-heading">■こんなアイテムをお探しの方におすすめいたします。</span>
-                <ul style="margin-top: 0.5rem;">
+                <ul style="margin-top: 0.5rem; font-size: 1.2rem; line-height: 1.6;">
                   <li>すでに欲しい商品が、完売しており、在庫を探している方</li>
                   <li>人気商品で在庫が少ないレアアイテムをお探しの方</li>
                 </ul>
@@ -511,15 +546,25 @@ Audemars Piguet, A.Lange & Söhne, Blancpain, Breguet, BREITLING, Franck Muller,
         <div style="display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: clamp(0.5rem, 2vw, 1.5rem); width: 100%;">
             <div class="footer__group footer__group--brand" style="align-items: center;">
                 <a href="#" class="footer-logo" style="flex-shrink: 0;"><img src="./public/images/sk_logomark.png" alt="Shop Kloset Logo" style="height: clamp(40px, 5vw, 50px);"></a>
-                <div class="footer-brand-text" style="font-size: clamp(8px, 1vw, 10px); flex-shrink: 0;">
-                    <p class="footer-trademark">日本のみならず世界数十ヵ国で商標登録出願中</p>
+                <div class="footer-brand-text" style="font-size: 1rem; flex-shrink: 0;">
+                    <p class="footer-trademark">日本のみならず、世界数十カ国で商標・特許登録出願中</p>
                     <p class="footer-copyright">© 2025 Shop Kloset Inc.</p>
                     </div>
             </div>
+            
+                        <div class="footer__group footer__group--contact" style="font-size: 2rem;">
+               <a href="mailto:info@shopkloset.com" class="contact-email">
+                    <span class="dli-mail"></span>
+                    <div>
+                        <p class="contact-title" style="font-size: 1.2rem;">お問合せ/CONTACT</p>
+                        <p class="contact-address" style="font-size: 1.2rem;">info@shopkloset.com</p>
+                    </div>
+               </a>
+            </div>
 
             <div class="footer__group footer__group--essential-nav">
-                <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; justify-content: center; gap: 0 1rem; font-size: clamp(10px, 1.2vw, 12px);">
-                    <li><a href="https://aboutus.shopkloset.com/about" target="_blank" style="text-decoration: none; color: inherit;">会社概要</a></li>
+        <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; justify-content: center; gap: 0 1rem; font-size: 1.4rem;">
+        <li><a href="https://aboutus.shopkloset.com/about" target="_blank" style="text-decoration: none; color: inherit;">会社概要</a></li>
         <li><a href="https://aboutus.shopkloset.com/privacypolicy" target="_blank" style="text-decoration: none; color: inherit;">プライバシーポリシー</a></li>
         <li><a href="./public/pdf/CookiePolicy_Japanese.pdf" data-lity style="text-decoration: none; color: inherit;">クッキー（Cookie）の利用について</a></li>
         <li><a href="commerce-disclosure.html" style="text-decoration: none; color: inherit;">特定商取引法に関する表記</a></li>
@@ -527,18 +572,10 @@ Audemars Piguet, A.Lange & Söhne, Blancpain, Breguet, BREITLING, Franck Muller,
 
                 </ul>
             </div>
-            <div class="footer__group footer__group--contact" style="font-size: clamp(10px, 1.2vw, 12px);">
-               <a href="mailto:info@shopkloset.com" class="contact-email">
-                    <span class="dli-mail"></span>
-                    <div>
-                        <p class="contact-title" style="font-size: clamp(11px, 1.4vw, 14px);">お問合せ/CONTACT</p>
-                        <p class="contact-address" style="font-size: clamp(10px, 1.2vw, 12px);">info@shopkloset.com</p>
-                    </div>
-               </a>
-            </div>
 
-            <div class="footer__group footer-address-pc" style="font-size: clamp(10px, 1.2vw, 12px); line-height: 1.5; text-align: center;">
-                 <p class="company-name-tel"><span style="font-size: clamp(11px, 1.4vw, 14px); font-weight: bold;">Shop Kloset Inc.</span></p>
+
+            <div class="footer__group footer-address-pc" style="font-size: 1.2rem; line-height: 1.5; text-align: center;">
+                 <p class="company-name-tel"><span style="font-size: 1.4rem; font-weight: bold;">Shop Kloset Inc.</span></p>
                  <p>〒150-0041 東京都渋谷区神南1-16-7</p>
                  <p>パークウェースクエア′1 2階</p>
                  <p>Tel. ０３ー３４６３−３８１８</p>
@@ -554,12 +591,11 @@ Audemars Piguet, A.Lange & Söhne, Blancpain, Breguet, BREITLING, Franck Muller,
             </div>
         </div>
 
-        <div class="footer__group footer__group--license" style="font-size: clamp(8px, 1vw, 10px); text-align: center; width: 100%; margin-top: 1rem;">
+        <div class="footer__group footer__group--license" style="font-size: 1rem; text-align: center; width: 100%; margin-top: 1rem;">
             <p class="footer-kobutsusho">古物商免許 東京都公安委員会 第 303312615440 号</p>
         </div>
     </div>
 </footer>
 </body>
 </html>
-
 
