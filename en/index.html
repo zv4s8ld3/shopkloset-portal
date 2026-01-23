@@ -10,7 +10,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>ShopKloset</title>
-<link rel="icon" href="/en/public/sk_favicon-512x512.ico" type="image/x-icon">
+<link rel="icon" href="./public/sk_favicon-512x512.ico" type="image/x-icon">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -20,7 +20,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
 <script src="https://cdn.tailwindcss.com"></script>
-<link rel="stylesheet" href="/en/public/css/styles_ks_0926.css">
+<link rel="stylesheet" href="./public/css/styles_ks_0123.css">
 <link href="https://cdnjs.cloudflare.com/ajax/libs/lity/2.4.1/lity.min.css" rel="stylesheet">
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/lity/2.4.1/lity.min.js"></script>
@@ -104,36 +104,33 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 });
 </script>
+
     
 <script>
 document.addEventListener('DOMContentLoaded', () => {
   const wrapper = document.querySelector('.kv-video-wrapper');
-  const videoId = "WEscHaN7P5M";
-  const youtubeURL = `https://www.youtube.com/watch?v=${videoId}`;
+  if (!wrapper) return;
 
-  // Check if video is public
-  fetch(youtubeURL, { method: "GET" })
-    .then(res => {
-      if (res.status === 200) {
-        const playBtn = wrapper.querySelector('.kv-video-play');
-        playBtn.addEventListener('click', () => {
-          wrapper.innerHTML = `
-            <iframe
-              class="kv-video"
-              src="https://www.youtube.com/embed/${videoId}?autoplay=1&mute=1&loop=1&playlist=${videoId}&playsinline=1"
-              title="ShopKloset Official Movie"
-              style="border:none;"
-              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture; web-share"
-              allowfullscreen
-            ></iframe>
-          `;
-        });
-      }
-    })
-    .catch(err => console.error("YouTube public check error:", err));
+  const videoId = "qpTl0SKJRFY";
+
+  const playBtn = wrapper.querySelector('.kv-video-play');
+  if (!playBtn) return;
+
+  playBtn.addEventListener('click', () => {
+    wrapper.innerHTML = `
+      <iframe
+        class="kv-video"
+        src="https://www.youtube.com/embed/${videoId}?autoplay=1&mute=1&loop=1&playlist=${videoId}&playsinline=1"
+        title="ShopKloset Official Movie"
+        style="border:none;"
+        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen
+      ></iframe>
+    `;
+  });
 });
-
 </script>
+
     
     
 <style>
@@ -280,11 +277,11 @@ document.addEventListener('DOMContentLoaded', () => {
     </button>
     <div class="header__brand-logo">
       <a href="/">
-        <img src="/en/public/images/osk_logo_s.png" alt="ShopKlosetlogo" class="logo">
+        <img src="./public/images/osk_logo_s.png" alt="ShopKlosetlogo" class="logo">
       </a>
     </div>
     <nav id="mainNav" class="header__nav">
-      <a href="/en/" class="header__nav-link">Home</a>
+      <a href="https://e.shopkloset.com/" class="header__nav-link">Home</a>
       <a href="https://lit.link/ShopKloset" class="header__nav-link">ShopKloset & Socials</a>
       <a href="https://aboutus.shopkloset.com/" class="header__nav-link">Shop Kloset Inc.</a>
     </nav>
@@ -314,10 +311,10 @@ document.addEventListener('DOMContentLoaded', () => {
       <p class="download-text">Download the App</p>
       <div class="download-badges">
         <a href="https://shopkloset.onelink.me/5LLq" class="download-badge rounded-none overflow-hidden">
-          <img src="/en/public/images/Mac_App_Store_Badge_EN.svg" alt="Download on the App Store" class="download-badge-icon">
+          <img src="./public/images/Mac_App_Store_Badge_EN.svg" alt="Download on the App Store" class="download-badge-icon">
         </a>
         <a href="https://shopkloset.onelink.me/5LLq" class="download-badge rounded-none overflow-hidden">
-          <img src="/en/public/images/Google_Play_Store_badge_EN.svg" alt="Get it on Google Play" class="download-badge-icon">
+          <img src="./public/images/Google_Play_Store_badge_EN.svg" alt="Get it on Google Play" class="download-badge-icon">
         </a>
       </div>
     </div>
@@ -348,20 +345,98 @@ document.addEventListener('DOMContentLoaded', () => {
   <p class="download-text">Download the App</p>
   <div class="download-badges">
     <a href="https://shopkloset.onelink.me/5LLq" class="download-badge rounded-none overflow-hidden">
-      <img src="/en/public/images/Mac_App_Store_Badge_EN.svg" alt="Download on the App Store" class="download-badge-icon">
+      <img src="./public/images/Mac_App_Store_Badge_EN.svg" alt="Download on the App Store" class="download-badge-icon">
     </a>
     <a href="https://shopkloset.onelink.me/5LLq" class="download-badge rounded-none overflow-hidden">
-      <img src="/en/public/images/Google_Play_Store_badge_EN.svg" alt="Get it on Google Play" class="download-badge-icon">
+      <img src="./public/images/Google_Play_Store_badge_EN.svg" alt="Get it on Google Play" class="download-badge-icon">
     </a>
   </div>
 </div>
-
-<div class="kv-video-wrapper bg-black">
-   <img class="kv-video-thumb" src="https://img.youtube.com/vi/1zXHoiGkMJ4/maxresdefault.jpg" alt="YouTube Thumbnail">
- <button class="kv-video-play" aria-label="Play">
+      
+      
+      <div class="kv-video-wrapper bg-black">
+  <img class="kv-video-thumb"
+       src="https://img.youtube.com/vi/qpTl0SKJRFY/hqdefault.jpg"
+       alt="YouTube Thumbnail">
+  <button class="kv-video-play" aria-label="Play">
     <span class="play-icon"></span>
   </button>
 </div>
+
+      
+<!-- ▼▼ Campaign Image + Terms Section ▼▼ -->
+<section class="campaign-section">
+
+  <!-- Image Area -->
+  <div class="campaign-images">
+    <img src="./public/images/campaign_e.png" alt="" />
+  </div>
+
+  <!-- Terms Box -->
+  <div class="campaign-terms">
+<h3 class="campaign-terms__title">■ Campaign Terms & Conditions</h3>
+
+<p class="campaign-terms__lead">
+  Because this campaign offers highly rare items at exceptional prices,
+  participation is limited to customers who meet all of the following criteria.
+</p>
+
+<hr class="campaign-terms__rule">
+
+    <ul>
+      <li>
+        <strong>Subscribers-Only Campaign</strong><br>
+        This campaign is exclusively for Shopkloset subscription members.
+        Please note that non-subscribers are not eligible to participate.
+      </li>
+
+      <li>
+        <strong>Mandatory "Unboxing" Post</strong><br>
+        As a condition of winning, you are required to post an "unboxing" video or photo
+        on your personal social media account (YouTube / Instagram / X / TikTok) upon receiving the item.
+        Please be aware that if you do not post the unboxing content, or if we are unable to verify your post,
+        you will be required to return the item in accordance with our policy.
+      </li>
+
+      <li>
+        <strong>Product Quality & Return Policy</strong><br>
+        All items are guaranteed authentic and have been professionally verified.
+        However, as these are special campaign items, we do not accept returns or claims of any kind
+        regarding the product condition. Please acknowledge this before entering.
+      </li>
+
+      <li>
+        <strong>Verification Process</strong><br>
+        Winners will receive a verification email from us. You must reply to this email with the social media
+        account handle you intend to use. If you do not currently have a social media account,
+        you will be required to create one to participate.
+      </li>
+
+      <li>
+        <strong>Content Usage Rights</strong><br>
+        By participating, you grant Shopkloset permission to use your post (including screenshots and media assets)
+        for our advertising, official website, and other promotional materials.
+      </li>
+        
+        <li>
+        Winners are eligible to purchase the item for 1 JPY. However, please note that depending on your country of residence,
+customs duties and import taxes may apply. Any such charges are the sole responsibility of the purchaser.
+      </li>
+        
+    </ul>
+
+    <p class="campaign-terms__closing">
+      From ShopKloset with Love You All !!
+    </p>
+  </div>
+
+</section>
+<!-- ▲▲ Campaign Image + Terms Section ▲▲ -->
+ 
+      
+      
+      
+      
 
 <section class="message-about-section mt-10" id="message">
   <div class="message-about-header">
@@ -374,10 +449,10 @@ document.addEventListener('DOMContentLoaded', () => {
       <p class="download-text">Download the App</p>
       <div class="download-badges">
         <a href="https://shopkloset.onelink.me/5LLq" class="download-badge rounded-none overflow-hidden">
-          <img src="/en/public/images/Mac_App_Store_Badge_EN.svg" alt="Download on the App Store" class="download-badge-icon">
+          <img src="./public/images/Mac_App_Store_Badge_EN.svg" alt="Download on the App Store" class="download-badge-icon">
         </a>
         <a href="https://shopkloset.onelink.me/5LLq" class="download-badge rounded-none overflow-hidden">
-          <img src="/en/public/images/Google_Play_Store_badge_EN.svg" alt="Get it on Google Play" class="download-badge-icon">
+          <img src="./public/images/Google_Play_Store_badge_EN.svg" alt="Get it on Google Play" class="download-badge-icon">
         </a>
       </div>
     </div>
@@ -433,10 +508,10 @@ document.addEventListener('DOMContentLoaded', () => {
     <p class="download-text">Download the App</p>
     <div class="download-badges">
       <a href="https://shopkloset.onelink.me/5LLq" class="download-badge rounded-none overflow-hidden">
-        <img src="/en/public/images/Mac_App_Store_Badge_EN.svg" alt="Download on the App Store" class="download-badge-icon">
+        <img src="./public/images/Mac_App_Store_Badge_EN.svg" alt="Download on the App Store" class="download-badge-icon">
       </a>
       <a href="https://shopkloset.onelink.me/5LLq" class="download-badge rounded-none overflow-hidden">
-        <img src="/en/public/images/Google_Play_Store_badge_EN.svg" alt="Get it on Google Play" class="download-badge-icon">
+        <img src="./public/images/Google_Play_Store_badge_EN.svg" alt="Get it on Google Play" class="download-badge-icon">
       </a>
     </div>
   </div>
@@ -536,9 +611,9 @@ Audemars Piguet, A.Lange & Söhne, Blancpain, Breguet, BREITLING, Franck Muller,
         
         <div style="display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: clamp(0.5rem, 2vw, 1.5rem); width: 100%;">
             <div class="footer__group footer__group--brand" style="align-items: center; display: flex; gap: 10px;">
-                <a href="index.html" class="footer-logo" style="flex-shrink: 0;"><img src="/en/public/images/sk_logomark.png" alt="Shop Kloset Logo" style="height: clamp(40px, 5vw, 50px);"></a>
+                <a href="index.html" class="footer-logo" style="flex-shrink: 0;"><img src="./public/images/sk_logomark.png" alt="Shop Kloset Logo" style="height: clamp(40px, 5vw, 50px);"></a>
                 <div class="footer-brand-text" style="font-size: clamp(8px, 1vw, 10px); flex-shrink: 0; text-align: left;">
-                    <p class="footer-trademark" style="margin:0;">Trademark applications are pending worldwide.</p>
+                    <p class="footer-trademark" style="margin:0;">Trademarks and patents pending in dozens of countries worldwide.</p>
                     <p class="footer-copyright" style="margin:0;">© 2025 Shop Kloset Inc.</p>
                 </div>
             </div>
@@ -546,10 +621,10 @@ Audemars Piguet, A.Lange & Söhne, Blancpain, Breguet, BREITLING, Franck Muller,
             <div class="footer__group footer__group--essential-nav">
                 <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; justify-content: center; gap: 0 1rem; font-size: clamp(10px, 1.2vw, 12px);">
                     <li><a href="https://aboutus.shopkloset.com/about" target="_blank" style="text-decoration: none; color: inherit;">Company Profile</a></li>               
-                    <li><a href="/en/privacypolicy_english.html" target="_blank" style="text-decoration: none; color: inherit;">Privacy Policy</a></li>
-                    <li><a href="/en/public/pdf/CookiePolicy_english.pdf" data-lity style="text-decoration: none; color: inherit;">Cookie Policy</a></li>
-                    <li><a href="/en/commerce-disclosure.html" style="text-decoration: none; color: inherit;">Specified Commercial Transactions Act</a></li>
-                    <li><a href="/en/terms-of-service.html" style="text-decoration: none; color: inherit;">Terms of Service</a></li>
+                    <li><a href="privacypolicy_english.html" target="_blank" style="text-decoration: none; color: inherit;">Privacy Policy</a></li>
+                    <li><a href="CookiePolicy_english.pdf" data-lity style="text-decoration: none; color: inherit;">Cookie Policy</a></li>
+                    <li><a href="commerce-disclosure.html" style="text-decoration: none; color: inherit;">Specified Commercial Transactions Act</a></li>
+                    <li><a href="terms-of-service.html" style="text-decoration: none; color: inherit;">Terms of Service</a></li>
                 </ul>
             </div>
 
@@ -571,10 +646,10 @@ Audemars Piguet, A.Lange & Söhne, Blancpain, Breguet, BREITLING, Franck Muller,
 
             <div class="footer__group footer__group--social" style="flex-shrink: 0;">
                 <div class="social-links-wrapper" style="display: flex; gap: 10px;">
-                    <a href="https://www.instagram.com/shopkloset_official" class="social-icon"><img src="/en/public/images/ww_social_instagram.png" alt="Instagram" style="height: 20px;"></a>
-                    <a href="https://x.com/ShopKloset" class="social-icon"><img src="/en/public/images/ww_social_x_twitter_w.png" alt="X" style="height: 20px;"></a>
-                    <a href="https://www.tiktok.com/@shopkloset_official" class="social-icon"><img src="/en/public/images/ww_social_tiktok.png" alt="TikTok" style="height: 20px;"></a>
-                    <a href="https://www.youtube.com/@ShopKloset" class="social-icon"><img src="/en/public/images/ww_social_youtube.png" alt="YouTube" style="height: 20px;"></a>
+                    <a href="https://www.instagram.com/shopkloset_official" class="social-icon"><img src="./public/images/ww_social_instagram.png" alt="Instagram" style="height: 20px;"></a>
+                    <a href="https://x.com/ShopKloset" class="social-icon"><img src="./public/images/ww_social_x_twitter_w.png" alt="X" style="height: 20px;"></a>
+                    <a href="https://www.tiktok.com/@shopkloset_official" class="social-icon"><img src="./public/images/ww_social_tiktok.png" alt="TikTok" style="height: 20px;"></a>
+                    <a href="https://www.youtube.com/@ShopKloset" class="social-icon"><img src="./public/images/ww_social_youtube.png" alt="YouTube" style="height: 20px;"></a>
                 </div>
             </div>
         </div>
