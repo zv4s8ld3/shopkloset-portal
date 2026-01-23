@@ -466,7 +466,7 @@ img {
 =========================================== */
 /*  共通 */
 .message-about-section {
-    padding: 1%;
+    padding: 0.2rem;
     text-align: center;
 	  align-items: center;
 		margin: 0 auto;
@@ -491,13 +491,13 @@ img {
 
 .section-subtitle {
 	font-family: 'Noto Serif JP', serif;
-    font-size: 1.2rem;
+    font-size: 1.6rem;
 	letter-spacing: 0.1em;
     font-weight: bold;
 }
-
+/* 本文 */
 .section-intro {
-    font-size: 1.3rem;
+    font-size: 1.4rem;
     line-height: 1.8;
     margin-bottom: 30px;
     padding: 0 0.5rem;
@@ -521,7 +521,7 @@ img {
     text-align: center;
 	  align-items: center;
 		margin: 0 auto;
-		max-width: 80%;
+		max-width: 85%;
   }
 
   .message-about-header {
@@ -567,7 +567,7 @@ img {
 /* PCでのセクションサブタイトル文字サイズ調整 */
 @media (min-width: 1025px) {
   .section-subtitle {
-    font-size: 1.8rem;
+    font-size: 2rem;
   }
 }
 
@@ -654,9 +654,10 @@ text-align: center;
 
 .download-text {
 color: #1a202c;
-font-weight: 600;
+font-weight: 400;
 margin-bottom: 0.75rem;
 text-align: center;
+    font-size: 1.4rem;
 }
 
 .download-badges {
@@ -924,23 +925,23 @@ margin-top: 1.5rem;
   .campaign-terms {
     width: 95%;
     padding: 4px; /* ← 8px → 4px にさらに圧縮 */
-    font-size: 1.2rem; /* ← 1.4rem だとスマホでは大きすぎるので微調整 */
-    line-height: 1.5;  /* ← 行間も少し詰める */
+    font-size: 1.2rem;
+    line-height: 1.5;
   }
     .campaign-terms__lead {
    text-align: left;
    margin: 0 auto 0.5rem;
 }
   .campaign-terms ul {
-    padding-left: 0.3rem; /* ← 1.3rem → 0.6rem に圧縮 */
-    padding-right: 0.1rem; /* ← 右側も詰める */
+    padding-left: 0.3rem;
+    padding-right: 0.1rem;
   }
 
   .campaign-terms li {
-    margin-bottom: 0.8rem; /* ← 少しだけ詰める（任意） */
+    margin-bottom: 0.8rem;
        }
   .campaign-terms h3 {
-    font-size: 1.6rem; /* ← 見出しもスマホでは少し小さく */
+    font-size: 1.6rem;
   }
 
   .campaign-terms__closing {
@@ -974,21 +975,21 @@ margin-top: 1.5rem;
 .closing-remark {
   display: flex;
   align-items: center;
-  gap: 1rem; /* 罫線とテキストの間隔 */
-  margin-top: 2rem; /* 上の文章との間隔 */
+  gap: 1rem;
+  margin-top: 2rem;
 
   /* ▼▼▼ 星が飛ぶアニメーション用の設定 ▼▼▼ */
   position: relative;
-  overflow: hidden; /* はみ出した星を隠す */
+  overflow: hidden;
 }
 
-/* 「キラン」という光を作成 */
+/* 「キラン」という光 */
 .closing-remark::before,
 .closing-remark::after {
   content: '';
   position: absolute;
   top: 50%;
-  left: -20px; /* 左側の画面外からスタート */
+  left: -20px;
   width: 10px;
   height: 10px;
   background: radial-gradient(circle, white 10%, rgba(255,255,255,0.6) 50%, transparent 70%);
@@ -998,21 +999,22 @@ margin-top: 1.5rem;
 }
 
 .closing-remark::after {
-  animation-delay: -2s; /* 2つ目の光を2秒遅らせる */
+  animation-delay: -2s;
 }
 
 .closing-remark__line {
-  flex-grow: 1; /* 利用可能なスペースを埋めるように伸長 */
+  flex-grow: 1;
   border: none;
   height: 1px;
-  background-color: #42210b; /* ページ全体のテキストカラーと統一 */
+  background-color: #42210b;
 }
 
 .closing-remark__text {
-  flex-shrink: 0; /* テキストが縮まないようにする */
-  font-family: 'Noto Serif JP', serif; /* セリフ体で見栄えを調整 */
-  font-style: italic; /* 少し斜体にする */
-  font-weight: bold; /* 文字を太字にする */
+  flex-shrink: 0;
+  font-family: 'Noto Serif JP', serif;
+  font-style: italic;
+  font-weight: bold;
+    font-size: 1.2rem; 
 
   /* ▼▼▼ キラキラアニメーション ▼▼▼ */
   color: transparent; /* テキスト自体は透明に */
@@ -1180,17 +1182,19 @@ overflow: visible;
 .service__item-heading {
   display: block;
   font-weight: bold;
+  font-size: 1.4rem;
 }
 
 /* 本文テキストのスタイル */
 .service__item-list li p {
   line-height: 1.5;
   margin-top: 0.5rem;
+    font-size: 1.3rem;
 }
 
-/* ブランド名リストの文字サイズを小さく */
+/* ブランド名リスト */
 .brand-list {
-  font-size: 1.1rem;
+  font-size: 1.3rem;
 }
 
 /* ▼ MessageMessage(仮)PC用スタイル（1025px以上） */
@@ -1363,6 +1367,7 @@ overflow: visible;
     display: none;
   }
   
+    
   /* アイテムを画面幅基準の縦積みレイアウトにする */
   .service__item {
     display: flex;
@@ -1399,19 +1404,18 @@ overflow: visible;
 ============================= */
 .site-footer {
   padding: 1.5rem 1rem;
-  font-optical-sizing: auto;
-  -webkit-font-optical-sizing: auto;
-	  font-weight: 400;
+  font-weight: 400;
   font-style: normal;
-	  background: linear-gradient(
+  background: linear-gradient(
     90deg,
-    #a27c2c 0%,        /* 濃い金色（左端） */
-    #e0b75e 30%,       /* 中間の金色 */
-    #f9e0a0 50%,       /* 明るい光沢（中央） */
-    #e0b75e 70%,       /* 中間の金色 */
-    #a27c2c 100%       /* 濃い金色（右端） */
+    #a27c2c 0%,  /* 濃い金色（左端） */
+    #e0b75e 30%,
+    #f9e0a0 50%,
+    #e0b75e 70%,
+    #a27c2c 100%
   );
 }
+
 
 /* フッターコンテンツの共通ラッパー */
 .footer__inner-wrap {
@@ -1469,7 +1473,7 @@ overflow: visible;
 }
 
 .contact-title {
-    font-size: clamp(0.8rem, 0.543rem + 1.37vw, 1.2rem);
+    font-size: 1.4rem;
     font-weight: 400;
     letter-spacing: -0.025em;
     margin-bottom: 0;
@@ -1477,7 +1481,7 @@ overflow: visible;
 
 /* 追加: モバイルでの日本語部分のフォントサイズ調整 */
 .contact-title .contact-jp {
-    font-size: 1.1em;
+    font-size: 1.4em;
 }
 
 .contact-email {
@@ -1505,8 +1509,8 @@ overflow: visible;
   vertical-align: middle;
   line-height: 1;
   position: relative;
-  width: 1.06667em;
-  height: 0.8em;
+  width: 1.8em;
+  height: 1.3em;
   border: 0.1em solid currentColor;
   border-radius: 0.1em;
   box-sizing: content-box;
@@ -1518,8 +1522,8 @@ overflow: visible;
   position: absolute;
   left: 50%;
   top: 0;
-  width: 0.75425em;
-  height: 0.75425em;
+  width: 1.3em;
+  height: 1.3em;
   border: 0.1em solid currentColor;
   border-top-color: transparent;
   border-right-color: transparent;
@@ -1568,6 +1572,10 @@ overflow: visible;
     max-width: 80%;
     margin: 0 auto;
   }
+.footer-address-pc { 
+    flex-basis: 100%;
+    width: 100%;
+}
 
   .footer__group {
     width: auto;
@@ -1591,7 +1599,7 @@ overflow: visible;
   }
 
   .footer-copyright {
-    font-size: 1rem;
+    font-size: 1.4rem;
   }
  /* お問い合わせのグループ (PC) */
     .footer__group--contact {
@@ -1607,7 +1615,7 @@ overflow: visible;
         flex-shrink: 0;
     }
     .contact-title .contact-jp {
-        font-size: 1em;
+        font-size: 1.4em;
     }
   .contact-email {
         justify-content: flex-start;
@@ -1672,7 +1680,7 @@ overflow: visible;
   }
 
   .footer-copyright {
-    font-size: clamp(0.7rem, -0.2rem + 1.875vw, 1rem);
+    font-size: 1.2rem;
   }
  /* お問い合わせのグループ */
     .footer__group--contact {
@@ -1689,7 +1697,7 @@ overflow: visible;
     }
 	
 .contact-title {
-        font-size: clamp(0.6rem, -0.9rem + 3.13vw, 1.1rem);
+        font-size: 1.4rem;
     }
 .contact-email {
         justify-content: flex-start;
@@ -1716,6 +1724,44 @@ overflow: visible;
 	}
 
 
+
+/* ===========================================
+   ▼ 769px〜1024px (2x2レイアウト時) の右側ブロックの内容を中央揃えにする調整
+=========================================== */
+@media (max-width: 1024px) and (min-width: 769px) {
+    .footer__group--contact {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    
+    /* SNSアイコン（social-links-wrapper） */
+    .footer__group--social .social-links-wrapper {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+    
+    .footer__group--contact .contact-email {
+        justify-content: center;
+        text-align: center;
+    }
+}
+
+/* アニメーションを適用する文字の初期状態 */
+.catch-copy-chars .char {
+  display: inline-block; 
+  opacity: 0;
+  animation: fadeInUp 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+
+
+
+
+
+
 /* ロゴサイズの適用 */
 /* モバイル (0px ~ 767px) */
 .header__brand-logo .logo {
@@ -1740,112 +1786,4 @@ overflow: visible;
   }
 }
 
-/* ===========================================
-   ▼ 769px〜1024px (2x2レイアウト時) の右側ブロックの内容を中央揃えにする調整
-=========================================== */
-@media (max-width: 1024px) and (min-width: 769px) {
-    .footer__group--contact {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        text-align: center; /* 念のためテキストも中央揃え */
-    }
-    
-    /* SNSアイコン（social-links-wrapper）を内側で中央揃え */
-    .footer__group--social .social-links-wrapper {
-        display: flex;
-        justify-content: center;
-        width: 100%;
-    }
-    
-    /* メールアドレスのテキストが左寄せになってしまうのを防ぐ（もし存在すれば） */
-    .footer__group--contact .contact-email {
-        justify-content: center;
-        text-align: center;
-    }
-}
-
-/* アニメーションを適用する文字の初期状態 */
-.catch-copy-chars .char {
-  display: inline-block; /* transformを適用するため */
-  opacity: 0; /* 初期状態は透明 */
-  animation: fadeInUp 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
-}
-
-
-/* ===========================================
-   ▼ キャンペーンバナー（PC用基本設定）
-=========================================== */
-.campaign-render-box {
-  position: relative; max-width: 1000px; margin: 40px auto;
-  border: 1px solid #d4af37; outline: 2px solid #000;
-  background-color: #000; color: #fff; font-family: "Hiragino Mincho ProN", serif;
-  box-sizing: border-box; overflow: hidden; z-index: 1;
-}
-
-/* 背景画像 */
-.bg-product { position: absolute; top: 0; width: 35%; height: 100%; z-index: -1; opacity: 0.5; pointer-events: none; }
-.bg-left { left: 0; } .bg-right { right: 0; }
-.bg-product img { width: 100%; height: 100%; object-fit: contain; -webkit-mask-image: linear-gradient(to right, black 60%, transparent 100%); mask-image: linear-gradient(to right, black 60%, transparent 100%); }
-.bg-right img { -webkit-mask-image: linear-gradient(to left, black 60%, transparent 100%); mask-image: linear-gradient(to left, black 60%, transparent 100%); }
-
-.render-content-main { position: relative; z-index: 2; padding: 25px 0; }
-.render-label-top-fixed { font-size: 1.8rem; color: #d4af37; margin-bottom: 25px; text-align: center; font-weight: bold; letter-spacing: 0.1em; }
-.render-middle-center { display: flex; justify-content: center; align-items: center; gap: 30px; padding: 0 20px; }
-.render-catch-part { font-size: 1.15rem; line-height: 2.0; text-align: left; white-space: nowrap; }
-
-/* PCではスマホ用改行を隠す */
-.sp-only-br { display: none; }
-
-/* ダイヤモンド・星・金文字（アニメーション等は以前のものを継続してください） */
-.diamond-text { font-size: 8.5rem; font-weight: 900; line-height: 1; font-family: 'Times New Roman', serif; background: linear-gradient(110deg, #e5e5e5 0%, #ffffff 20%, #c0c0c0 30%, #ffffff 45%, #e0f7fa 50%, #ffffff 55%, #f3e5f5 70%, #ffffff 80%, #e5e5e5 100%); background-size: 200% auto; -webkit-background-clip: text; -webkit-text-fill-color: transparent; animation: diamond-shine 5s linear infinite; filter: drop-shadow(0 0 2px rgba(255,255,255,0.8)); }
-.gold-text-shiny { font-size: 3rem; font-weight: bold; background: linear-gradient(to bottom, #fceabb, #d4af37 50%, #8b6f1f); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-
-/* 注意事項 */
-.render-notes-container { display: flex; justify-content: center; align-items: flex-start; padding: 12px 35px; border-top: 1px solid #d4af37; background-color: rgba(0, 0, 0, 0.6); position: relative; z-index: 2; }
-.notes-side-title { width: 140px; font-size: 12px; font-weight: bold; color: #d4af37; flex-shrink: 0; text-align: right; margin-right: 20px; margin-top: 1px; }
-.notes-side-body { max-width: 650px; font-size: 11px; line-height: 1.6; text-align: left; }
-.notes-side-body p { margin: 0 0 3px 0; text-indent: -1em; padding-left: 1em; }
-
-/* ボタン */
-.sub-btn-wrapper-final { text-align: center; margin-top: 30px; margin-bottom: 120px; }
-.btn-gold-flat { display: inline-block; padding: 18px 60px; background: linear-gradient(135deg, #d4af37, #8b6f1f); color: #000 !important; font-weight: bold; text-decoration: none; }
-
-/* ===========================================
-   ▼ スマホ対応（レスポンシブ：ここに集約）
-=========================================== */
-@media (max-width: 767px) {
-  .campaign-render-box { width: 95%; max-width: none; flex: none; margin: 20px auto; outline: 1px solid #000; }
-  
-  /* スマホ用改行を有効化 */
-  .sp-only-br { display: block !important; }
-
-  /* タイトルを大きく・3行に */
-  .render-label-top-fixed {
-    font-size: 1.6rem !important; line-height: 1.4 !important;
-    letter-spacing: 0.05em !important; padding: 0 10px !important;
-    margin-bottom: 15px !important; text-shadow: 0 2px 4px rgba(0,0,0,0.5);
-    white-space: normal !important;
-  }
-
-  /* 中央エリアを縦並びに */
-  .render-middle-center { flex-direction: column !important; gap: 10px !important; padding: 0 15px; }
-
-  /* サブコピー：PC版の<br>を消して自動改行 */
-  .render-catch-part {
-    font-size: 0.95rem !important; line-height: 1.6 !important;
-    text-align: center !important; white-space: normal !important;
-    width: 100% !important; margin: 0 auto 15px auto !important;
-  }
-  .render-catch-part br { display: none !important; }
-
-  /* 1円と星のサイズ */
-  .diamond-text { font-size: 5.5rem !important; }
-  .glitter-star { width: 10px; height: 10px; }
-
-  /* 注意事項の中央寄せ */
-  .render-notes-container { flex-direction: column !important; align-items: center !important; padding: 15px !important; text-align: center; }
-  .notes-side-title { width: auto !important; text-align: center !important; margin-right: 0 !important; margin-bottom: 10px !important; }
-  .notes-side-body { text-align: left !important; }
-}
 
