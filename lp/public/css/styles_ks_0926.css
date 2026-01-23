@@ -466,7 +466,7 @@ img {
 =========================================== */
 /*  共通 */
 .message-about-section {
-    padding: 1%;
+    padding: 0.2rem;
     text-align: center;
 	  align-items: center;
 		margin: 0 auto;
@@ -491,16 +491,16 @@ img {
 
 .section-subtitle {
 	font-family: 'Noto Serif JP', serif;
-    font-size: 1.2rem;
+    font-size: 1.6rem;
 	letter-spacing: 0.1em;
     font-weight: bold;
 }
-
+/* 本文 */
 .section-intro {
-    font-size: 1rem;
+    font-size: 1.4rem;
     line-height: 1.8;
     margin-bottom: 30px;
-    padding: 0 10px;
+    padding: 0 0.5rem;
 	text-align: left;
 }
 
@@ -521,7 +521,7 @@ img {
     text-align: center;
 	  align-items: center;
 		margin: 0 auto;
-		max-width: 80%;
+		max-width: 85%;
   }
 
   .message-about-header {
@@ -567,7 +567,7 @@ img {
 /* PCでのセクションサブタイトル文字サイズ調整 */
 @media (min-width: 1025px) {
   .section-subtitle {
-    font-size: 1.8rem;
+    font-size: 2rem;
   }
 }
 
@@ -654,9 +654,10 @@ text-align: center;
 
 .download-text {
 color: #1a202c;
-font-weight: 600;
+font-weight: 400;
 margin-bottom: 0.75rem;
 text-align: center;
+    font-size: 1.4rem;
 }
 
 .download-badges {
@@ -849,6 +850,106 @@ margin-top: 1.5rem;
 
 
 
+/* =============================
+   ▼ 参加規約セクション
+============================= */
+.campaign-section {
+  max-width: 100%;
+  margin: 2rem auto;
+  padding: 0;
+  background-color: #000;
+  border: none;
+  box-sizing: border-box;
+}
+
+.campaign-terms {
+  width: 90%;
+  max-width: 1600px;
+  margin: 0 auto 0.5rem;
+  padding: 15px 0.3rem; /* 上下15px、左右6px */
+  color: #fff;
+  border: 1px solid #d4af37;
+  font-family: "Hiragino Mincho ProN", serif;
+  font-size: 1.4rem; /* ← 全体フォントを約2倍へ */
+  line-height: 1.6; /* ← 1.9 → 1.5 に圧縮 */
+  box-sizing: border-box;
+}
+
+.campaign-terms__lead {
+   text-align: center;
+   margin: 0 auto 0.5rem;
+}
+.campaign-terms strong {
+  color: #d4af37;
+  margin-bottom: 0.5rem;
+}
+
+.campaign-terms__rule {
+  border: 1px solid #d4af37;
+  max-width: 95%;
+  margin: 0.5rem auto; /* ← これで中央揃え */
+}
+
+
+@media (max-width: 1024px) {
+  .campaign-terms {
+    width: 95%;
+  }
+}
+
+.campaign-terms h3 {
+  color: #d4af37;
+  font-size: 2rem; /* ← 2rem → 約2倍 */
+  margin-bottom: 1rem; /* ← 少し圧縮 */
+  text-align: center;
+  letter-spacing: 0.1em;
+}
+
+.campaign-terms ul {
+  padding-left: 1.3rem; /* ← 2.5rem → 1.5rem に圧縮 */
+}
+
+.campaign-terms li {
+  margin-bottom: 1rem; /* ← 2rem → 1rem に圧縮 */
+}
+
+.campaign-terms__closing {
+  text-align: right;
+  margin-top: 1.2rem; /* ← 2rem → 1.2rem に圧縮 */
+  font-size: 2rem; /* ← 1.8rem → 約2倍 */
+  letter-spacing: 0.1em;
+  color: #FFD700;
+}
+
+@media (max-width: 768px) {
+  .campaign-terms {
+    width: 95%;
+    padding: 4px; /* ← 8px → 4px にさらに圧縮 */
+    font-size: 1.2rem;
+    line-height: 1.5;
+  }
+    .campaign-terms__lead {
+   text-align: left;
+   margin: 0 auto 0.5rem;
+}
+  .campaign-terms ul {
+    padding-left: 0.3rem;
+    padding-right: 0.1rem;
+  }
+
+  .campaign-terms li {
+    margin-bottom: 0.8rem;
+       }
+  .campaign-terms h3 {
+    font-size: 1.6rem;
+  }
+
+  .campaign-terms__closing {
+    font-size: 1.2rem; /* ← 締めの文も調整 */
+  }
+}
+
+
 
 /* リユースショップ様セクションの追加テキスト表示切り替え */
 .additional-text--pc {
@@ -874,21 +975,21 @@ margin-top: 1.5rem;
 .closing-remark {
   display: flex;
   align-items: center;
-  gap: 1rem; /* 罫線とテキストの間隔 */
-  margin-top: 2rem; /* 上の文章との間隔 */
+  gap: 1rem;
+  margin-top: 2rem;
 
   /* ▼▼▼ 星が飛ぶアニメーション用の設定 ▼▼▼ */
   position: relative;
-  overflow: hidden; /* はみ出した星を隠す */
+  overflow: hidden;
 }
 
-/* 「キラン」という光を作成 */
+/* 「キラン」という光 */
 .closing-remark::before,
 .closing-remark::after {
   content: '';
   position: absolute;
   top: 50%;
-  left: -20px; /* 左側の画面外からスタート */
+  left: -20px;
   width: 10px;
   height: 10px;
   background: radial-gradient(circle, white 10%, rgba(255,255,255,0.6) 50%, transparent 70%);
@@ -898,21 +999,22 @@ margin-top: 1.5rem;
 }
 
 .closing-remark::after {
-  animation-delay: -2s; /* 2つ目の光を2秒遅らせる */
+  animation-delay: -2s;
 }
 
 .closing-remark__line {
-  flex-grow: 1; /* 利用可能なスペースを埋めるように伸長 */
+  flex-grow: 1;
   border: none;
   height: 1px;
-  background-color: #42210b; /* ページ全体のテキストカラーと統一 */
+  background-color: #42210b;
 }
 
 .closing-remark__text {
-  flex-shrink: 0; /* テキストが縮まないようにする */
-  font-family: 'Noto Serif JP', serif; /* セリフ体で見栄えを調整 */
-  font-style: italic; /* 少し斜体にする */
-  font-weight: bold; /* 文字を太字にする */
+  flex-shrink: 0;
+  font-family: 'Noto Serif JP', serif;
+  font-style: italic;
+  font-weight: bold;
+    font-size: 1.2rem; 
 
   /* ▼▼▼ キラキラアニメーション ▼▼▼ */
   color: transparent; /* テキスト自体は透明に */
@@ -1080,17 +1182,19 @@ overflow: visible;
 .service__item-heading {
   display: block;
   font-weight: bold;
+  font-size: 1.4rem;
 }
 
 /* 本文テキストのスタイル */
 .service__item-list li p {
   line-height: 1.5;
   margin-top: 0.5rem;
+    font-size: 1.3rem;
 }
 
-/* ブランド名リストの文字サイズを小さく */
+/* ブランド名リスト */
 .brand-list {
-  font-size: 0.9em;
+  font-size: 1.3rem;
 }
 
 /* ▼ MessageMessage(仮)PC用スタイル（1025px以上） */
@@ -1263,6 +1367,7 @@ overflow: visible;
     display: none;
   }
   
+    
   /* アイテムを画面幅基準の縦積みレイアウトにする */
   .service__item {
     display: flex;
@@ -1747,4 +1852,7 @@ overflow: visible;
   .render-notes-container { flex-direction: column !important; align-items: center !important; padding: 15px !important; text-align: center; }
   .notes-side-title { width: auto !important; text-align: center !important; margin-right: 0 !important; margin-bottom: 10px !important; }
   .notes-side-body { text-align: left !important; }
+
 }
+
+
