@@ -1400,24 +1400,23 @@ overflow: visible;
 }
 
 /* =============================
-   ▼ Footer 共通構造
+   ▼ Footer Common Structure
 ============================= */
 .site-footer {
   padding: 1.5rem 1rem;
-  font-weight: 400;
+	  font-weight: 400;
   font-style: normal;
-  background: linear-gradient(
+	  background: linear-gradient(
     90deg,
-    #a27c2c 0%,  /* 濃い金色（左端） */
-    #e0b75e 30%,
-    #f9e0a0 50%,
-    #e0b75e 70%,
-    #a27c2c 100%
+    #a27c2c 0%,        /* Dark gold (left) */
+    #e0b75e 30%,       /* Medium gold */
+    #f9e0a0 50%,       /* Bright highlight (center) */
+    #e0b75e 70%,       /* Medium gold */
+    #a27c2c 100%       /* Dark gold (right) */
   );
 }
 
-
-/* フッターコンテンツの共通ラッパー */
+/* Common wrapper for footer content */
 .footer__inner-wrap {
   max-width: 80rem;
   margin-left: auto;
@@ -1429,7 +1428,7 @@ overflow: visible;
   text-align: left;
 }
 
-/* 各フッターブロック */
+/* Each footer block */
 .footer__group {
   width: 100%;
 }
@@ -1438,7 +1437,7 @@ overflow: visible;
   margin-bottom: 0;
 }
 
-/* ブランドロゴと著作権のグループ */
+/* Brand logo and copyright group */
 .footer__group--brand {
     display: flex;
     flex-direction: row;
@@ -1458,12 +1457,12 @@ overflow: visible;
 }
 
 .footer-copyright {
-  font-size: 1.2rem;
+  font-size: 0.75rem;
   color: #42210b;
   line-height: 1.5;
 }
 
-/* お問い合わせのグループ */
+/* Contact group */
 .footer__group--contact {
     text-align: center;
     display: flex;
@@ -1473,15 +1472,15 @@ overflow: visible;
 }
 
 .contact-title {
-    font-size: 1.4rem;
+    font-size: clamp(0.8rem, 0.543rem + 1.37vw, 1.2rem);
     font-weight: 400;
     letter-spacing: -0.025em;
     margin-bottom: 0;
 }
 
-/* 追加: モバイルでの日本語部分のフォントサイズ調整 */
+/* Added: Adjust font size for Japanese part on mobile */
 .contact-title .contact-jp {
-    font-size: 1.4em;
+    font-size: 0.8em;
 }
 
 .contact-email {
@@ -1490,7 +1489,7 @@ overflow: visible;
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 1rem;
+    gap: 0.5rem;
 }
 
 
@@ -1503,14 +1502,14 @@ overflow: visible;
   color: #d1d5db;
 }
 
-/* メールマーク*/
+/* Mail icon */
 .dli-mail {
   display: inline-block;
   vertical-align: middle;
   line-height: 1;
   position: relative;
-  width: 1.8em;
-  height: 1.3em;
+  width: 1.06667em;
+  height: 0.8em;
   border: 0.1em solid currentColor;
   border-radius: 0.1em;
   box-sizing: content-box;
@@ -1522,8 +1521,8 @@ overflow: visible;
   position: absolute;
   left: 50%;
   top: 0;
-  width: 1.3em;
-  height: 1.3em;
+  width: 0.75425em;
+  height: 0.75425em;
   border: 0.1em solid currentColor;
   border-top-color: transparent;
   border-right-color: transparent;
@@ -1532,7 +1531,7 @@ overflow: visible;
   transform: translate(-50%, -50%) rotate(-45deg) skew(10deg, 10deg);
 }
 
-/* SNSアイコンのグループ */
+/* Social icons group */
 .footer__group--social {
 }
 
@@ -1556,7 +1555,7 @@ overflow: visible;
 }
 
 
-/* ===== PC表示での調整 (min-width: 768px 以上で適用) ===== */
+/* ===== Adjustments for PC display (applies at min-width: 768px) ===== */
 @media (min-width: 768px) {
   .site-footer {
     padding: 2.5rem 1rem;
@@ -1572,23 +1571,19 @@ overflow: visible;
     max-width: 80%;
     margin: 0 auto;
   }
-.footer-address-pc { 
-    flex-basis: 100%;
-    width: 100%;
-}
 
   .footer__group {
     width: auto;
     margin-bottom: 0;
   }
-  /* 各グループの幅を調整 */
+  /* Adjust width of each group */
   .footer__group--brand,
   .footer__group--contact,
   .footer__group--social {
     
   }
 
-  /* ブランドロゴと著作権のグループ (PC) */
+  /* Brand logo and copyright group (PC) */
   .footer__group--brand {
 	display: flex;
     flex-direction: row;
@@ -1599,23 +1594,23 @@ overflow: visible;
   }
 
   .footer-copyright {
-    font-size: 1.4rem;
+    font-size: 0.875rem;
   }
- /* お問い合わせのグループ (PC) */
+ /* Contact group (PC) */
     .footer__group--contact {
         display: flex;
         flex-direction: row;
         justify-content: center;
-        gap: 1rem;
+        gap: 0.5rem;
     }
 
-    /* contact-title の下マージンをリセット */
+    /* Reset bottom margin for contact-title */
     .footer__group--contact .contact-title {
         margin-bottom: 0;
         flex-shrink: 0;
     }
     .contact-title .contact-jp {
-        font-size: 1.4em;
+        font-size: 0.8em;
     }
   .contact-email {
         justify-content: flex-start;
@@ -1623,7 +1618,7 @@ overflow: visible;
         white-space: nowrap;
         flex-grow: 1;
   }
-  /* SNSアイコンのグループ (PC) */
+  /* Social icons group (PC) */
   .footer__group--social {
     display: flex;
     justify-content: flex-end;
@@ -1644,7 +1639,7 @@ overflow: visible;
   }
 	}
 
-/* タブレット */
+/* Tablet */
 @media (min-width: 768px) and (max-width: 1024px) {
 .site-footer {
     padding: 2rem 1rem;
@@ -1667,7 +1662,7 @@ overflow: visible;
   }
 
 
-  /* ブランドロゴと著作権のグループ (PC) */
+  /* Brand logo and copyright group (PC) */
   .footer__group--brand {
     flex-direction: row;
     align-items: center;
@@ -1680,9 +1675,9 @@ overflow: visible;
   }
 
   .footer-copyright {
-    font-size: 1.2rem;
+    font-size: clamp(0.7rem, -0.2rem + 1.875vw, 1rem);
   }
- /* お問い合わせのグループ */
+ /* Contact group */
     .footer__group--contact {
         display: flex;
         flex-direction: row;
@@ -1690,14 +1685,14 @@ overflow: visible;
         gap: 0.5rem;
     }
 
- /* contact-title の下マージンをリセット */
+ /* Reset bottom margin for contact-title */
  .footer__group--contact .contact-title {
         margin-bottom: 0;
         flex-shrink: 0;
     }
 	
 .contact-title {
-        font-size: 1.4rem;
+        font-size: clamp(0.6rem, -0.9rem + 3.13vw, 1.1rem);
     }
 .contact-email {
         justify-content: flex-start;
@@ -1706,7 +1701,7 @@ overflow: visible;
         flex-grow: 1;
   }
 
-  /* SNSアイコンのグループ*/
+  /* Social icons group */
   .footer__group--social {
     flex-basis: auto;
   }
@@ -1724,53 +1719,15 @@ overflow: visible;
 	}
 
 
-
-/* ===========================================
-   ▼ 769px〜1024px (2x2レイアウト時) の右側ブロックの内容を中央揃えにする調整
-=========================================== */
-@media (max-width: 1024px) and (min-width: 769px) {
-    .footer__group--contact {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
-    
-    /* SNSアイコン（social-links-wrapper） */
-    .footer__group--social .social-links-wrapper {
-        display: flex;
-        justify-content: center;
-        width: 100%;
-    }
-    
-    .footer__group--contact .contact-email {
-        justify-content: center;
-        text-align: center;
-    }
-}
-
-/* アニメーションを適用する文字の初期状態 */
-.catch-copy-chars .char {
-  display: inline-block; 
-  opacity: 0;
-  animation: fadeInUp 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
-}
-
-
-
-
-
-
-
-/* ロゴサイズの適用 */
-/* モバイル (0px ~ 767px) */
+/* Logo size application */
+/* Mobile (0px - 767px) */
 .header__brand-logo .logo {
   height: 1.562rem;
   max-height: 2.5rem;
   width: auto;
 }
 
-/* タブレット (768px ~ 1024px) */
+/* Tablet (768px - 1024px) */
 @media (min-width: 768px) and (max-width: 1024px) {
   .header__brand-logo .logo {
     height: 2.5rem;
@@ -1778,12 +1735,45 @@ overflow: visible;
   }
 }
 
-/* PC (1025px ~ ) */
+/* PC (1025px and up) */
 @media (min-width: 1025px) {
   .header__brand-logo .logo {
     height: clamp(1.562rem, 2.5vw, 3.125rem);
     max-height: 3.75rem;
   }
 }
+
+/* ===========================================
+   ▼ Adjustment to center content of right-side blocks in 2x2 layout (769px-1024px)
+=========================================== */
+@media (max-width: 1024px) and (min-width: 769px) {
+    .footer__group--contact {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center; /* 念のためテキストも中央揃え */
+    }
+    
+    /* Center social icons (social-links-wrapper) internally */
+    .footer__group--social .social-links-wrapper {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+    
+    /* Prevent email address text from being left-aligned (if it exists) */
+    .footer__group--contact .contact-email {
+        justify-content: center;
+        text-align: center;
+    }
+}
+
+/* Initial state for characters to be animated */
+.catch-copy-chars .char {
+  display: inline-block; /* transformを適用するため */
+  opacity: 0; /* 初期状態は透明 */
+  animation: fadeInUp 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
 
 
