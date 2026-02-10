@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ShopKloset</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="./public/css/styles_ks_0123.css">
+  <style>
+    body {
+      background-color: #000;
+      margin: 0;
+      padding: 0;
+    }
+    .header {
+      padding: 3% 0% 0% 5%; 
+      display: flex;
+      justify-content: flex-end;
+      background: #000;
+      position: relative;
+      z-index: 10;
+    }
+    .logo {
+      height: 40px;
+      width: auto;
+    }
+    .campaign-images {
+      width: 100%;
+      background: #000;
+    }
+    .campaign-images img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    .site-footer {
+      margin-top: 0;
+      padding: 1.5rem 0;
+    }
+    .contact-title, .contact-address {
+      font-size: clamp(10px, 1.2vw, 12px) !important;
+    }
+
+    /* スマホ専用 (767px以下) レスポンシブ指定 */
+    @media screen and (max-width: 767px) {
+      .header {
+        padding: 5% 2% 0% 0% !important;
+        justify-content: flex-end !important;
+      }
+      .logo {
+        height: 7vw !important; 
+      }
+      .campaign-images img {
+        margin-top: -5% !important;
+      }
+      .site-footer {
+        padding: 4% 0 !important;
+      }
+      .footer__inner-wrap {
+        gap: 2vw !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="header">
+    <div class="header__brand-logo">
+      <a href="/">
+        <img src="./public/images/osk_logo_s.png" alt="Shop Kloset ロゴ" class="logo">
+      </a>
+    </div>
+  </header>
+
+  <main>
+    <section class="campaign-section">
+      <div class="campaign-images">
+        <img src="./public/images/Image_02.webp" alt="" />
+      </div>
+
+      <div class="campaign-terms">
+        <h3 class="campaign-terms__title">■ 参加規約・注意事項</h3>
+        <p class="campaign-terms__lead">
+          本キャンペーンは非常に希少な商品を破格で提供するため、
+          以下の条件を全て満たす方のみが対象となります。
+        </p>
+        <hr class="campaign-terms__rule">
+        <ul>
+          <li>
+            <strong>会員様限定キャンペーン</strong><br>
+            Shopklosetのサブスクリプション登録をしていただいた会員様限定のキャンペーンとなります。
+            未登録の方はご参加いただけませんのでご了承ください。
+          </li>
+          <li>
+            <strong>SNSでの「開封式」投稿が必須</strong><br>
+            当選者様は、商品到着後にご本人のSNS（YouTube / Instagram / X / TikTok）にて、
+            「開封式」の様子をご投稿いただくことを条件とさせていただきます。
+            SNS投稿を行わない場合、または確認ができない場合は、商品を返品していただく規約となります。
+          </li>
+          <li>
+            <strong>商品の品質と返品について</strong><br>
+            商品は全て鑑定済みの本物ですが、特別キャンペーン品のため、
+            返品や商品に対するクレームは一切受け付けておりません。
+            予めご了承の上ご応募ください。
+          </li>
+          <li>
+            弊社から、当選者様へ特別な確認用メールアドレスをお送りしますので、
+            ご使用になっているSNSアカウントを記載いただき、ご返信をお願いいたします。
+          </li>
+          <li>
+            当選者様のSNSへ投稿された投稿画面、及び素材については、
+            弊社の広告やオフィシャルWEBサイト等に使用させていただく許諾承認していただきます。
+          </li>
+          <li>
+            関税が発生した場合は購入者様のご負担となることをご了承ください。
+          </li>	
+        </ul>
+        <p class="campaign-terms__closing">
+          ShopKlosetより「愛を込めて」！
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer__inner-wrap" style="gap: 1rem; align-items: center; flex-wrap: wrap; justify-content: center; flex-direction: column; display: flex;">
+        <div style="display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: clamp(0.5rem, 2vw, 1.5rem); width: 100%;">
+            
+            <div class="footer__group footer__group--brand" style="display: flex; align-items: center; gap: 0.8rem;">
+                <a href="#" class="footer-logo" style="flex-shrink: 0;"><img src="./public/images/sk_logomark.png" alt="Shop Kloset Logo" style="height: clamp(30px, 4vw, 40px);"></a>
+                <div class="footer-brand-text" style="font-size: clamp(8px, 1vw, 10px); flex-shrink: 0;">
+                    <p class="footer-trademark">日本のみならず世界数十ヵ国で商標登録出願中</p>
+                    <p class="footer-copyright">© 2025 Shop Kloset Inc.</p>
+                </div>
+            </div>
+
+            <div class="footer__group footer__group--essential-nav">
+                <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; justify-content: center; gap: 0 1rem; font-size: clamp(10px, 1.2vw, 12px);">
+                    <li><a href="https://aboutus.shopkloset.com/about" target="_blank" style="text-decoration: none; color: inherit;">会社概要</a></li>
+                    <li><a href="https://aboutus.shopkloset.com/privacypolicy" target="_blank" style="text-decoration: none; color: inherit;">プライバシーポリシー</a></li>
+                    <li><a href="./public/pdf/CookiePolicy_Japanese.pdf" style="text-decoration: none; color: inherit;">クッキー（Cookie）の利用について</a></li>
+                    <li><a href="commerce-disclosure.html" style="text-decoration: none; color: inherit;">特定商取引法に関する表記</a></li>
+                    <li><a href="terms-of-service.html" style="text-decoration: none; color: inherit;">利用規約</a></li>
+                </ul>
+            </div>
+
+            <div class="footer__group footer__group--contact">
+               <a href="mailto:info@shopkloset.com" class="contact-email" style="text-decoration: none; color: inherit;">
+                    <div>
+                        <p class="contact-title">お問合せ/CONTACT</p>
+                        <p class="contact-address">info@shopkloset.com</p>
+                    </div>
+               </a>
+            </div>
+
+            <div class="footer__group footer-address-pc" style="font-size: clamp(10px, 1.2vw, 12px); line-height: 1.5; text-align: center;">
+                 <p class="company-name-tel"><span style="font-weight: bold;">Shop Kloset Inc.</span></p>
+                 <p>〒150-0041 東京都渋谷区神南1-16-7 パークウェースクエア′1 2階</p>
+                 <p>Tel. ０３ー３４６３−３８１８</p>
+            </div>
+        </div>
+
+        <div class="footer__group footer__group--license" style="font-size: clamp(8px, 1vw, 10px); text-align: center; width: 100%;">
+            <p class="footer-kobutsusho">古物商免許 東京都公安委員会 第 303272419438 号</p>
+        </div>
+    </div>
+  </footer>
+</body>
+</html>
