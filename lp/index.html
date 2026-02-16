@@ -1,5 +1,4 @@
-<!DOCTYPE html>
-<html lang="ja"><head>
+
 <!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
   new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -7,20 +6,15 @@
   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
   })(window,document,'script','dataLayer','GTM-T56J8N3S');</script>
 <!-- End Google Tag Manager -->
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ShopKloset</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ShopKloset</title>
 <link rel="icon" href="./public/sk_favicon-512x512.ico" type="image/x-icon">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=M+PLUS+1:wght@100..900&family=Noto+Serif+JP:wght@200..900&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Didot+LT+Pro:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Didot+LT+Pro:wght@400;700&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
 <script src="https://cdn.tailwindcss.com"></script>
 <link rel="stylesheet" href="./public/css/styles_ks_0123.css">
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<link href="https://cdnjs.cloudflare.com/ajax/libs/lity/2.4.1/lity.min.css" rel="stylesheet">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/lity/2.4.1/lity.min.js"></script>
 <script>
   document.addEventListener("DOMContentLoaded", function () {
         const menuBtn = document.getElementById("menu-toggle");
@@ -49,65 +43,6 @@
       char.style.animationDelay = `${index * 0.05}s`;
     });
   });
-</script>
-<script>
-document.addEventListener('DOMContentLoaded', () => {
-  const scroller = document.querySelector('.service__grid.message-sub');
-  const leftButton = document.querySelector('.scroll-button--left');
-  const rightButton = document.querySelector('.scroll-button--right');
-  const items = document.querySelectorAll('.service__item');
-
-  if (scroller && leftButton && rightButton && items.length) {
-    const scrollDistance = 250;
-
-    const getCurrentIndex = () => {
-      const scrollLeft = scroller.scrollLeft;
-      const itemWidth = items[0].offsetWidth + parseInt(getComputedStyle(items[0]).marginRight || 0);
-      return Math.round(scrollLeft / itemWidth);
-    };
-
-    const updateButtonVisibility = () => {
-      const scroller = document.querySelector('.service__grid.message-sub');
-      // PC (min-width: 1025px) ではボタン非表示
-      if (window.matchMedia('(min-width: 1025px)').matches) {
-        leftButton.classList.remove('is-visible');
-        rightButton.classList.remove('is-visible');
-        return;
-      }
-
-      // タブレット・モバイルではスライドの端にボタンを表示
-      const isScrollable = scroller.scrollWidth > scroller.clientWidth;
-      if (!isScrollable) {
-        leftButton.classList.remove('is-visible');
-        rightButton.classList.remove('is-visible');
-        return;
-      }
-
-      const scrollLeft = scroller.scrollLeft;
-      const scrollMax = scroller.scrollWidth - scroller.clientWidth;
-      const threshold = 10; // スクロールバーの遊びを許容する閾値
-
-      // 左ボタン
-      if (scrollLeft > threshold) {
-        leftButton.classList.add('is-visible');
-      } else {
-        leftButton.classList.remove('is-visible');
-      }
-
-      // 右ボタン
-      if (scrollLeft < scrollMax - threshold) {
-        rightButton.classList.add('is-visible');
-      } else {
-        rightButton.classList.remove('is-visible');
-      }
-    };
-
-
-    scroller.addEventListener('scroll', updateButtonVisibility);
-    window.addEventListener('resize', updateButtonVisibility);
-    updateButtonVisibility(); // 初期表示
-  }
-});
 </script>
 <script>
 document.addEventListener('DOMContentLoaded', () => {
@@ -596,3 +531,4 @@ Audemars Piguet, A.Lange & Söhne, Blancpain, Breguet, BREITLING, Franck Muller,
 </footer>
 </body>
 </html>
+
