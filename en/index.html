@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en"><head>
+<html lang="en">
+<head>
 <!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
   new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -36,7 +37,7 @@
         }
       });
 </script>
-	<script>
+<script>
   // 文字アニメーションの遅延を設定
   document.addEventListener("DOMContentLoaded", function() {
     const chars = document.querySelectorAll(".catch-copy-chars .char");
@@ -69,135 +70,6 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 </script>
-
-    
-    
-<style>
-  /* --- Existing Media Queries --- */
-  @media (max-width: 1024px) and (min-width: 769px) {
-    .footer__inner-wrap {
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 1.5rem 1rem;
-      padding: 2rem 1rem;
-    }
-    .footer__group--brand,
-    .footer__group--contact,
-    .footer-address-pc,
-    .footer__group--social {
-      flex-basis: 48%;
-      justify-content: center;
-    }
-    .footer-brand-text, .footer__group--contact, .footer-address-pc {
-        font-size: 12px !important;
-    }
-    /* Order for 2x2 grid */
-    .footer__group--brand { order: 1; }
-    .footer__group--contact { order: 2; }
-    .footer-address-pc { order: 3; }
-    .footer__group--social { order: 4; }
-
-    /* Center align items within their flex container */
-    .footer__group--brand, .footer-address-pc { justify-content: flex-start; }
-    .footer__group--contact, .footer__group--social { justify-content: flex-end; }
-    .footer-address-pc {
-      text-align: left;
-    }
-
-  }
-  @media (max-width: 768px) {
-    .download-group {
-        width: 300px !important;
-        margin-left: auto !important;
-        margin-right: auto !important;
-    }
-    .download-group .download-text {
-        text-align: center;
-    }
-    .download-group .download-badges {
-        display: flex;
-        justify-content: center;
-    }
-    #message .message-about-content {
-      padding-left: 1rem;
-      padding-right: 1rem;
-    }
-  }
-
-  /* Media query for screens 767px and below */
-  @media (max-width: 767px) {
-    .service__grid.message-sub--two-rows { /* Adjust layout for service__grid */
-      display: flex; /* Explicitly set display to flex */
-      flex-direction: column; /* Stack items vertically */
-      height: auto; /* Set height to auto */
-      overflow-y: visible; /* Make vertical overflow visible */
-      overflow-x: hidden; /* Disable horizontal scrolling */
-      padding-bottom: 1rem; /* Add padding at the bottom */
-    }
-    .service__grid.message-sub--two-rows .service__item {
-      width: 100%; /* Make each item take up the full width */
-    }
-  }
-
-  /* --- CSS moved from inline styles --- */
-
-  .footer__inner-wrap {
-    gap: clamp(0.5rem, 2vw, 1.5rem);
-    align-items: center;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-
-  .footer__group--brand img {
-    height: clamp(40px, 5vw, 50px);
-  }
-
-  .footer-brand-text {
-    font-size: clamp(8px, 1vw, 10px);
-    flex-shrink: 0;
-  }
-  
-  .footer__group--contact {
-    font-size: clamp(10px, 1.2vw, 12px);
-  }
-
-  .footer__group--contact .contact-title {
-    font-size: clamp(11px, 1.4vw, 14px);
-  }
-
-  .footer__group--contact .contact-address {
-    font-size: clamp(10px, 1.2vw, 12px);
-  }
-
-  .footer-address-pc {
-    font-size: clamp(10px, 1.2vw, 12px);
-    line-height: 1.5;
-    text-align: center;
-  }
-
-  .footer-address-pc span {
-    font-size: clamp(11px, 1.4vw, 14px);
-    font-weight: bold;
-  }
-  
-  /* --- Styles moved from message-about-section --- */
-  
-  .message-about-content .message-about-text .section-intro:first-child {
-      margin-top: 2rem; /* Correction for <p class="section-intro" style="margin-top: 2rem;"> */
-  }
-
-  .additional-text--pc .section-intro:last-child {
-      margin-top: 2rem; /* Correction for <p class="section-intro" style="margin-top: 2rem;"> */
-  }
-
-  /* Adjust font style for "Ready to Sell to the World?" */
-  .catch-copy-chars {
-    font-family: "DM Serif Display", serif;
-    font-stretch: normal; /* Change from condensed to regular */
-    font-weight: normal;    /* Make it more impactful */
-  }
-
-</style>
 </head>
 
 <body>
@@ -216,7 +88,7 @@ document.addEventListener('DOMContentLoaded', () => {
     </button>
     <div class="header__brand-logo">
       <a href="/">
-        <img src="./public/images/osk_logo_s.png" alt="ShopKlosetlogo" class="logo">
+        <img src="./public/images/sk_logo_s.webp" alt="ShopKlosetlogo" class="logo">
       </a>
     </div>
     <nav id="mainNav" class="header__nav">
@@ -308,74 +180,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
   <!-- Image Area -->
   <div class="campaign-images">
-    <img src="./public/images/campaign_e_k.webp" alt="" />
+    <img src="./public/images/campaign_e_k.webp" alt="campaign-images" />
   </div>
-
-  <!-- Terms Box
-  <div class="campaign-terms">
-<h3 class="campaign-terms__title">■ Campaign Terms & Conditions</h3>
-
-<p class="campaign-terms__lead">
-  Because this campaign offers highly rare items at exceptional prices,
-  participation is limited to customers who meet all of the following criteria.
-</p>
-
-<hr class="campaign-terms__rule">
-
-    <ul>
-      <li>
-        <strong>Subscribers-Only Campaign</strong><br>
-        This campaign is exclusively for Shopkloset subscription members.
-        Please note that non-subscribers are not eligible to participate.
-      </li>
-
-      <li>
-        <strong>Mandatory "Unboxing" Post</strong><br>
-        As a condition of winning, you are required to post an "unboxing" video or photo
-        on your personal social media account (YouTube / Instagram / X / TikTok) upon receiving the item.
-        Please be aware that if you do not post the unboxing content, or if we are unable to verify your post,
-        you will be required to return the item in accordance with our policy.
-      </li>
-
-      <li>
-        <strong>Product Quality & Return Policy</strong><br>
-        All items are guaranteed authentic and have been professionally verified.
-        However, as these are special campaign items, we do not accept returns or claims of any kind
-        regarding the product condition. Please acknowledge this before entering.
-      </li>
-
-      <li>
-        <strong>Verification Process</strong><br>
-        Winners will receive a verification email from us. You must reply to this email with the social media
-        account handle you intend to use. If you do not currently have a social media account,
-        you will be required to create one to participate.
-      </li>
-
-      <li>
-        <strong>Content Usage Rights</strong><br>
-        By participating, you grant Shopkloset permission to use your post (including screenshots and media assets)
-        for our advertising, official website, and other promotional materials.
-      </li>
-        
-        <li>
-        Winners are eligible to purchase the item for 1 JPY. However, please note that depending on your country of residence,
-customs duties and import taxes may apply. Any such charges are the sole responsibility of the purchaser.
-      </li>
-        
-    </ul>
-
-    <p class="campaign-terms__closing">
-      From ShopKloset with Love You All !!
-    </p>
-  </div>  Campaign Image + Terms Section ▲▲ -->
-
 </section>
 
- 
-      
-      
-      
-      
 
 <section class="message-about-section mt-10" id="message">
   <div class="message-about-header">
@@ -481,7 +289,7 @@ customs duties and import taxes may apply. Any such charges are the sole respons
 
 		
 <div class="section__content">
-  <div class="scroller-container">
+  <div class="service-section-container">
   <div class="service__grid message-sub message-sub--two-rows">
       <div class="service__item service__item--top"> <div class="service__image service__image--circle service__image--message-sub-1">
         </div>
@@ -535,12 +343,6 @@ Audemars Piguet, A.Lange & Söhne, Blancpain, Breguet, BREITLING, Franck Muller,
         </div>
       </div>
      </div>
-    <button class="scroll-button scroll-button--left" aria-label="Previous">
-      <i class="fa-solid fa-chevron-left"></i>
-    </button>
-    <button class="scroll-button scroll-button--right" aria-label="Next">
-      <i class="fa-solid fa-chevron-right"></i>
-    </button>
   </div>
 </div>
 
@@ -550,7 +352,7 @@ Audemars Piguet, A.Lange & Söhne, Blancpain, Breguet, BREITLING, Franck Muller,
         
         <div style="display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: clamp(0.5rem, 2vw, 1.5rem); width: 100%;">
             <div class="footer__group footer__group--brand" style="align-items: center; display: flex; gap: 10px;">
-                <a href="index.html" class="footer-logo" style="flex-shrink: 0;"><img src="./public/images/sk_logomark.png" alt="Shop Kloset Logo" style="height: clamp(40px, 5vw, 50px);"></a>
+                <a href="index.html" class="footer-logo" style="flex-shrink: 0;"><img src="./public/images/sk_logomark.webp" alt="Shop Kloset Logo" style="height: clamp(40px, 5vw, 50px);"></a>
                 <div class="footer-brand-text" style="font-size: clamp(8px, 1vw, 10px); flex-shrink: 0; text-align: left;">
                     <p class="footer-trademark" style="margin:0;">Trademarks and patents pending in dozens of countries worldwide.</p>
                     <p class="footer-copyright" style="margin:0;">© 2025 Shop Kloset Inc.</p>
@@ -559,7 +361,7 @@ Audemars Piguet, A.Lange & Söhne, Blancpain, Breguet, BREITLING, Franck Muller,
 
             <div class="footer__group footer__group--essential-nav">
                 <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; justify-content: center; gap: 0 1rem; font-size: clamp(10px, 1.2vw, 12px);">
-                    <li><a href="https://aboutus.shopkloset.com/about" target="_blank" style="text-decoration: none; color: inherit;">Company Profile</a></li>               
+                    <li><a href="https://www.shopkloset.com/?lang=en" target="_blank" style="text-decoration: none; color: inherit;">Company Profile</a></li>               
                     <li><a href="privacypolicy_english.html" target="_blank" style="text-decoration: none; color: inherit;">Privacy Policy</a></li>
                     <li><a href="CookiePolicy_english.pdf" data-lity style="text-decoration: none; color: inherit;">Cookie Policy</a></li>
                     <li><a href="commerce-disclosure.html" style="text-decoration: none; color: inherit;">Specified Commercial Transactions Act</a></li>
@@ -585,10 +387,10 @@ Audemars Piguet, A.Lange & Söhne, Blancpain, Breguet, BREITLING, Franck Muller,
 
             <div class="footer__group footer__group--social" style="flex-shrink: 0;">
                 <div class="social-links-wrapper" style="display: flex; gap: 10px;">
-                    <a href="https://www.instagram.com/shopkloset_official" class="social-icon"><img src="./public/images/ww_social_instagram.png" alt="Instagram" style="height: 20px;"></a>
-                    <a href="https://x.com/ShopKloset" class="social-icon"><img src="./public/images/ww_social_x_twitter_w.png" alt="X" style="height: 20px;"></a>
-                    <a href="https://www.tiktok.com/@shopkloset_official" class="social-icon"><img src="./public/images/ww_social_tiktok.png" alt="TikTok" style="height: 20px;"></a>
-                    <a href="https://www.youtube.com/@ShopKloset" class="social-icon"><img src="./public/images/ww_social_youtube.png" alt="YouTube" style="height: 20px;"></a>
+                    <a href="https://www.instagram.com/shopkloset_official" class="social-icon"><img src="./public/images/ww_social_instagram.webp" alt="Instagram" style="height: 20px;"></a>
+                    <a href="https://x.com/ShopKloset" class="social-icon"><img src="./public/images/ww_social_x_twitter_w.webp" alt="X" style="height: 20px;"></a>
+                    <a href="https://www.tiktok.com/@shopkloset_official" class="social-icon"><img src="./public/images/ww_social_tiktok.webp" alt="TikTok" style="height: 20px;"></a>
+                    <a href="https://www.youtube.com/@ShopKloset" class="social-icon"><img src="./public/images/ww_social_youtube.webp" alt="YouTube" style="height: 20px;"></a>
                 </div>
             </div>
         </div>
@@ -600,4 +402,3 @@ Audemars Piguet, A.Lange & Söhne, Blancpain, Breguet, BREITLING, Franck Muller,
 </footer>
 </body>
 </html>
-
