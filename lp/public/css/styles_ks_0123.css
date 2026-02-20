@@ -1,6 +1,6 @@
 @charset "utf-8";
 /* =====================
-   ▼ Reset & Base
+   ▼ Reset & Base (EN)
 ===================== */
 * {
   margin: 0;
@@ -20,8 +20,8 @@ html, body {
 }
 
 body {
-  background-color: #E2D9BC;
-  color: #42210b;
+  background-color: rgba(244,213,124,1.00);
+  color: rgba(66,33,11,1.00);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   padding-top: 0;
@@ -62,7 +62,6 @@ body {
   50% { background-position: 100% 50%; }
   100% { background-position: 0% 50%; }
 }
-
 
 a {
   text-decoration: none;
@@ -185,10 +184,6 @@ img {
     max-height: 3.75rem;
   }
 
-  .header__inner {
-    justify-content: space-between;
-    padding: 0 5.5rem;
-  }
   .header__menu-btn {
     width: 3rem;
     height: 3rem;
@@ -233,7 +228,7 @@ img {
 /* PCスタイル */
 @media (min-width: 1025px) {
 
-  .header__menu-btn {
+.header__menu-btn {
     width: 4rem;
     height: 4rem;
   }
@@ -266,8 +261,34 @@ img {
 }
 .cta-button--black:hover {
   background: #000;
-  color: #ffd700;
+  color: rgba(255,215,0,1.00);
 }
+
+
+/* Logo size application */
+/* Mobile (0px - 767px) */
+.header__brand-logo .logo {
+  height: 1.562rem;
+  max-height: 2.5rem;
+  width: auto;
+}
+
+/* Tablet (768px - 1024px) */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .header__brand-logo .logo {
+    height: 2.5rem;
+    max-height: 3.75rem;
+  }
+}
+
+/* PC (1025px and up) */
+@media (min-width: 1025px) {
+  .header__brand-logo .logo {
+    height: clamp(1.562rem, 2.5vw, 3.125rem);
+    max-height: 3.75rem;
+  }
+}
+
 
 /* =====================
    ▼ Hero
@@ -280,13 +301,13 @@ img {
   align-items: center;
 	margin-top: 0;
     padding-top: 0;
-		background-color: transparent;
+	background-color: transparent;
 }
 .hero__bg-image {
   position: absolute;
 	top: 0;
   inset: 0;
-  background-image: url('../images/sp_hero.jpg');
+  background-image: url('../images/sp_hero.webp');
   background-size: cover;
   background-position: center 0%;
   background-repeat: no-repeat;
@@ -301,11 +322,11 @@ img {
   align-items: flex-start;
   text-align: left;
 }
-
+/* Adjust font style for "Ready to Sell to the World?" */
 .catch-copy-chars {
   text-align: left; 
   color: #000;
-  font-family: "HG明朝E", "Cormorant Garamond", serif;
+  font-family: "DM Serif Display", serif;
   font-weight: normal;
   line-height: 1.2;
   text-shadow: -1.5px -1.5px 0 #fff, 1.5px -1.5px 0 #fff,
@@ -332,6 +353,12 @@ img {
 	box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
+/* Initial state for characters to be animated */
+.catch-copy-chars .char {
+  display: inline-block; /* transformを適用するため */
+  opacity: 0; /* 初期状態は透明 */
+  animation: fadeInUp 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
 /* 文字アニメーションのキーフレーム */
 @keyframes fadeInUp {
   from {
@@ -350,8 +377,6 @@ img {
     padding-bottom: 10rem;
     margin-bottom: 2rem;
   }
-  .hero__bg-image {
-  }
   .hero__content {
     top: 0;
     bottom: 0;
@@ -363,9 +388,9 @@ img {
     position: absolute;
     top: 35%;
     font-size: clamp(1.4rem, 0.827rem + 2.864vw, 2.2rem); 
-    white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+	letter-spacing: 0.1rem;
   }
   .hero__subtitle {
     position: absolute;
@@ -382,7 +407,7 @@ img {
     height: clamp(31rem, -2rem + 68.75vw, 42rem);
   }
   .hero__bg-image {
-    background-image: url('../images/pc_hero.jpg');
+    background-image: url('../images/pc_hero.webp');
     background-position: center 0%;
   }
   .hero__content {
@@ -394,7 +419,6 @@ img {
     max-width: 60rem;
     padding-right: 2rem;
   }
-
   .catch-copy-chars {
     font-size: clamp(2.1rem, -0.3rem + 5vw, 2.9rem);
     margin-bottom: clamp(6.3rem, -1.8rem + 16.875vw, 9rem);
@@ -420,7 +444,7 @@ img {
   }
 
   .hero__bg-image {
-    background-image: url('../images/pc_hero.jpg');
+    background-image: url('../images/pc_hero.webp');
     background-position: center 0%;
     background-size: cover;
     background-repeat: no-repeat;
@@ -445,11 +469,13 @@ img {
     box-sizing: border-box;
   }
 
-  .catch-copy-chars {
+/* Adjust font style for "Ready to Sell to the World?" */
+.catch-copy-chars {
     font-size: clamp(2.5rem, 0.782rem + 2.682vw, 4rem);
+    font-stretch: normal;
+    font-weight: normal;
     margin-bottom: 8rem;
-    letter-spacing: 0.3rem;
-    white-space: normal; 
+    letter-spacing: 0.3rem; 
   }
 
   .hero__subtitle {
@@ -482,10 +508,11 @@ img {
     margin: 0 auto; 
 }
 
+
 .section-title {
     font-size: 2.5rem;
     font-family: 'Didot LT Pro', serif;
-    color: #ffd700;
+    color: rgba(255,215,0,1.00);
     margin: 0;
 }
 
@@ -498,12 +525,11 @@ img {
 /* 本文 */
 .section-intro {
     font-size: 1.4rem;
-    line-height: 1.8;
+    line-height: 1.6;
     margin-bottom: 30px;
     padding: 0 0.5rem;
 	text-align: left;
 }
-
 /* 罫線スタイル */
 .header-divider {
 	border: 0;
@@ -512,6 +538,14 @@ img {
     margin: 20px auto;
     width: 100%;
 }
+  /* --- Styles moved from message-about-section --- */
+  .message-about-content .message-about-text .section-intro:first-child {
+      margin-top: 2rem; /* Correction for <p class="section-intro" style="margin-top: 2rem;"> */
+  }
+
+  .additional-text--pc .section-intro:last-child {
+      margin-top: 2rem; /* Correction for <p class="section-intro" style="margin-top: 2rem;"> */
+  }
 
 
 /* PC・タブレット レイアウト */
@@ -564,33 +598,51 @@ img {
   }
 }
 
-/* PCでのセクションサブタイトル文字サイズ調整 */
+ @media (max-width: 768px) {
+    .download-group {
+        width: 300px !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+    .download-group .download-text {
+        text-align: center;
+    }
+    .download-group .download-badges {
+        display: flex;
+        justify-content: center;
+    }
+    #message .message-about-content {
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+  }
+/* PCのセクションサブタイトル文字 */
 @media (min-width: 1025px) {
   .section-subtitle {
     font-size: 2rem;
   }
 }
 
-/* 「ShopKlosetとは」セクションの本文フォントサイズをPC/タブレットで調整 */
+/* 「ShopKlosetとは」セクションの本文フォントPC/タブレットで調整 */
 @media (min-width: 768px) {
   #aboutus .section-intro {
-    font-size: 1.3rem;
+    font-size: 1.5rem;
   }
 }
 
 /* 「ShopKlosetとは」セクションの本文レスポンシブ表示切り替え */
 .about-text--pc {
-  display: none; /* モバイルでは非表示 */
+  display: none; /* モバイル非表示 */
 }
 .about-text--mobile {
-  display: block; /* モバイルでは表示 */
+  display: block; /* モバイル表示 */
 }
 @media (min-width: 768px) {
   .about-text--pc {
-    display: block; /* PC/タブレットでは表示 */
+    display: block; /* PC/タブレット表示 */
   }
   .about-text--mobile {
-    display: none; /* PC/タブレットでは非表示 */
+    display: none; /* PC/タブレット非表示 */
   }
 }
 /* ========================================
@@ -774,6 +826,24 @@ margin-top: 1.5rem;
   }
 }
 
+ @media (max-width: 768px) {
+    .download-group {
+        width: 300px !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+    .download-group .download-text {
+        text-align: center;
+    }
+    .download-group .download-badges {
+        display: flex;
+        justify-content: center;
+    }
+    #message .message-about-content {
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+  }
 
 /* ========================================
    ▼ KV（サムネ or YouTube動画）
@@ -866,12 +936,12 @@ margin-top: 1.5rem;
   width: 90%;
   max-width: 1600px;
   margin: 0 auto 0.5rem;
-  padding: 15px 0.3rem; /* 上下15px、左右6px */
-  color: #fff;
+  padding: 15px 0.3rem;
+  color: white;
   border: 1px solid #d4af37;
   font-family: "Hiragino Mincho ProN", serif;
-  font-size: 1.4rem; /* ← 全体フォントを約2倍へ */
-  line-height: 1.6; /* ← 1.9 → 1.5 に圧縮 */
+  font-size: 1.4rem;
+  line-height: 1.6;
   box-sizing: border-box;
 }
 
@@ -926,7 +996,7 @@ margin-top: 1.5rem;
     width: 95%;
     padding: 4px; /* ← 8px → 4px にさらに圧縮 */
     font-size: 1.2rem;
-    line-height: 1.5;
+    line-height: 1.6;
   }
     .campaign-terms__lead {
    text-align: left;
@@ -1052,8 +1122,8 @@ margin-top: 1.5rem;
 }
 
 /* =============================
-   ▼ MessageMessage(仮)共通構造
-============================= */
+    ▼ MessageMessage(仮)共通構造
+   ============================= */
 .service__grid.message-sub {
   padding: 0.5rem;
   position: relative;
@@ -1062,40 +1132,19 @@ margin-top: 1.5rem;
   flex-wrap: nowrap;
   justify-content: flex-start;
   gap: 2rem;
-  -webkit-overflow-scrolling: touch;
-  scroll-snap-type: x mandatory;
 }
-.service__grid.message-sub::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: url('../images/service.png');
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: contain;
-  filter: invert(1);
-  opacity: 0.15;
-  z-index: -1;
-}
+
 .service__item {
   display: flex;
   flex-direction: column;
   text-align: left;
   width: 100%;
   flex-shrink: 0;
-  scroll-snap-align: start;
   padding: 1rem;
   box-sizing: border-box;
-overflow: visible;
+  overflow: visible;
 }
-.service__grid.message-sub .service__item:first-child,
-.service__grid.message-sub .service__item:last-child {
-  margin-left: 0;
-  margin-right: 0;
-}
+
 .service__image--circle {
   border-radius: 50%;
   overflow: visible;
@@ -1113,27 +1162,26 @@ overflow: visible;
 }
 
 .service__image--message-sub-1 {
-  background-image: url('../images/message_sub_1.jpg');
+  background-image: url('../images/message_sub_1.webp');
   background-size: cover;
 }
 
 .service__image--message-sub-2 {
-  background-image: url('../images/message_sub_2.jpg');
+  background-image: url('../images/message_sub_2.webp');
   background-size: cover;
 }
+
 .service__text-block {
   display: flex;
   flex-direction: column;
   justify-content: center;
   text-align: left;
 }
-.service__grid.message-sub::-webkit-scrollbar {
-  display: none;
-}
-.scroller-container {
+
+.service-section-container {
   position: relative;
-    padding-left: calc(50px + 1.5rem); 
-    padding-right: calc(50px + 1.5rem);
+  padding-left: calc(50px + 1.5rem); 
+  padding-right: calc(50px + 1.5rem);
   background: linear-gradient(
     45deg,
     #b1b5b3 0%,
@@ -1143,33 +1191,9 @@ overflow: visible;
     #bdc3c9 100%
   );	
 }
-.scroll-button {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 2.5rem;
-  height: 2.5rem;
-  border-radius: 50%;
-  background-color: rgba(255, 255, 255, 0.7);
-  border: 1px solid rgba(0, 0, 0, 0.2);
-  color: #fff;
-  cursor: pointer;
-  z-index: 20;
-  display: none;
-  align-items: center;
-  justify-content: center;
-  transition: background-color 0.3s, opacity 0.3s;
-}
-.scroll-button:hover {
-  background-color: rgba(255, 255, 255, 0.9);
-}
-.scroll-button--left { left: 0.5rem; }
-.scroll-button--right { right: 0.5rem; }
-.scroll-button i { font-size: 1rem; }
 
-/* ▼ MessageMessage(仮) - 新しいセクションのスタイル */
 .service__item-list {
-  list-style: none; /* リストの「・」を非表示に */
+  list-style: none;
   padding: 0;
   margin: 0;
 }
@@ -1178,40 +1202,29 @@ overflow: visible;
   margin-bottom: 1rem;
 }
 
-/* 小見出し部分のスタイル（太字） */
 .service__item-heading {
   display: block;
   font-weight: bold;
   font-size: 1.4rem;
 }
 
-/* 本文テキストのスタイル */
-.service__item-list li p {
-  line-height: 1.5;
-  margin-top: 0.5rem;
-    font-size: 1.3rem;
+.brand-list,
+.service__item-list li p,
+.service__item-list ul li {
+  font-size: 1.2rem;
+  line-height: 1.6;
 }
 
-/* ブランド名リスト */
-.brand-list {
-  font-size: 1.3rem;
-}
-
-/* ▼ MessageMessage(仮)PC用スタイル（1025px以上） */
+/* ▼ PC用スタイル（1025px以上） */
 @media (min-width: 1025px) {
-  .scroller-container {
+  .service-section-container {
     padding-left: 8rem; 
     padding-right: 8rem;
   } 
 
-  /* 横スクロールをなくし、上下２段の縦積み固定レイアウトにする */
   .service__grid.message-sub.message-sub--two-rows {
     display: flex;
     flex-direction: column;
-    flex-wrap: nowrap;
-    justify-content: center;
-    overflow-x: auto;
-    overflow-y: visible;
     max-width: 75rem;
     margin-left: auto;
     margin-right: auto;
@@ -1219,7 +1232,6 @@ overflow: visible;
     gap: 4rem;
   }
 
-  /* 上段・下段共通で画像とテキストを横並びにする */
   .service__item.service__item--top,
   .service__item.service__item--bottom {
     width: 100%;
@@ -1231,20 +1243,14 @@ overflow: visible;
     display: flex;
   }
 
-  /* 画像のサイズとマージン */
   .service__image--circle {
-    border-radius: 50%;
     width: 15rem;
     height: 15rem;
     margin: 0 4rem;
     flex-shrink: 0;
-    object-fit: cover;
-    background-size: contain;
-    background-position: center center;
     box-shadow: 0 0 50px 20px rgba(112, 128, 144, 0.9); 
   }
 
-  /* 上段テキストブロックの調整: 左右2列に分割 */
   .service__item--top .service__text-block--two-cols {
     display: flex;
     flex-direction: row;
@@ -1253,604 +1259,267 @@ overflow: visible;
     flex-grow: 1;
   }
 
-  /* 上段テキストブロック内の各列のスタイル */
   .service__item--top .service__text-block--two-cols .text-col {
     width: calc(50% - 2rem);
     flex-shrink: 0;
   }
-
-  /* 下段テキストブロック (長文リスト) の調整: 全幅を使用 */
-  .service__item--bottom .service__text-block {
-    flex-grow: 1;
-    max-width: none;
-  }
-
-  /* スクロールボタンは非表示にする */
-  .scroll-button {
-    display: none !important;
-  }
 }
 
-/* ▼ MessageMessage(仮)タブレット表示（768~1024px） */
+/* ▼ タブレット・モバイル表示（1024px以下） */
 @media (min-width: 768px) and (max-width: 1024px) {
-  
-  .scroller-container {
-    padding-left: 3rem;
-    padding-right: 3rem;
+  .service-section-container {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+
   }
 
-  /* 横スクロールをなくし、上下２段の縦積み固定レイアウトにする */
-  .service__grid.message-sub.message-sub--two-rows {
-    display: flex;
-    flex-direction: column; 
-    flex-wrap: nowrap;
-    justify-content: center;
-    overflow-x: visible; 
-    max-width: 75rem;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 3rem 0;
-    gap: 4rem; 
-  }
-
-  /* 上段・下段共通で画像とテキストを横並びにする */
-  .service__item.service__item--top,
-  .service__item.service__item--bottom {
-    width: 100%;
-    flex-direction: row; 
-    align-items: center;
-    justify-content: flex-start;
-    padding: 0;
-    margin: 0;
-    display: flex;
-  }
-
-  /* 画像のサイズとマージン */
-  .service__image--circle {
-  border-radius: 50%;
-  margin: 0 1rem;
-  flex-shrink: 0;
-  object-fit: cover;
-  background-size: contain;
-  background-position: center center;
-  box-shadow: 0 0 50px 20px rgba(112, 128, 144, 0.9); 
-  }
-  
-  /* 上段テキストブロックの調整: 左右2列に分割 */
-  .service__item--top .service__text-block--two-cols {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    gap: 4rem;
-    flex-grow: 1;
-  }
-  
-  /* 上段テキストブロック内の各列のスタイル */
-  .service__item--top .service__text-block--two-cols .text-col {
-    width: calc(50% - 2rem); 
-    flex-shrink: 0;
-  }
-
-  /* 下段テキストブロック (長文リスト) の調整: 全幅を使用 */
-  .service__item--bottom .service__text-block {
-    flex-grow: 1;
-    max-width: none;
-  }
-  
-  /* スクロールボタンは非表示にする */
-  .scroll-button {
-    display: none !important;
-  }
-}
-
-/* ▼ MessageMessage(仮)モバイル表示（767px以下） */
-@media (max-width: 767px) {
-
-  .scroller-container {
-    padding-left: 0; /* パディングが影を切るので0に */
-    padding-right: 0;
-  }
-  
-  /* 横スクロールを復活させる設定 */
   .service__grid.message-sub {
-    /* 元の横スクロール設定に戻す */
-    display: flex;
-    flex-wrap: nowrap;
-    justify-content: flex-start;
-    gap: 2rem;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-    scroll-snap-type: x mandatory;
-    padding: 0.5rem;
-  }
-  .service__grid.message-sub::-webkit-scrollbar {
-    display: none;
-  }
-  
-    
-  /* アイテムを画面幅基準の縦積みレイアウトにする */
-  .service__item {
     display: flex;
     flex-direction: column;
-    text-align: left;
+    gap: 3rem;
+    align-items: center;
+  }
+
+  .service__item {
+    padding: 0;
+    max-width: 75%;
     width: 100%;
-    flex-shrink: 0;
-    scroll-snap-align: start;
-    padding: 1rem;
-    box-sizing: border-box;
-    overflow: visible;
-    align-items: center; /* 画像を中央に配置 */
+  }
+
+  .service__text-block {
+    text-align: left;
   }
 
   .service__image--circle {
-    margin-left: 0; 
-    margin-right: 0;
-	      box-shadow: 0 0 50px 10px rgba(112, 128, 144, 0.9);
+    margin: 2rem auto 0 auto; 
+    width: clamp(12rem, 3.093rem + 18.6vw, 15rem);
+    height: clamp(12rem, 3.093rem + 18.6vw, 15rem);	  
   }
-  
-  /* 上段テキストブロックの修正: 左右2ブロック化を解除し縦積みに戻す */
+
   .service__item--top .service__text-block--two-cols {
     display: flex;
     flex-direction: column; 
-    gap: 1rem;
+    gap: 1.5rem;
   }
+}
+
+/* ▼ モバイル（767px以下） */
+@media (max-width: 767px) {
+  .service-section-container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  
+  .service__grid.message-sub {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    overflow-x: visible;
+    padding: 2rem 0;
+  }
+
+  .service__item {
+    width: 100%;
+    padding: 0;
+    flex-shrink: 1;
+  }
+
+  .service__image--circle {
+    margin: 0 auto 1.5rem auto; 
+    width: 12rem;
+    height: 12rem;
+    box-shadow: 0 0 40px 10px rgba(112, 128, 144, 0.8);
+  }
+
+  .service__item--top .service__text-block--two-cols {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
   .service__item--top .service__text-block--two-cols .text-col {
-    width: 100%; 
+    width: 100%;
+  }
+
+  .brand-list,
+  .service__item-list li p,
+  .service__item-list ul li {
+    font-size: 1.2rem;
   }
 }
 
 /* =============================
-   ▼ Footer 共通構造
+   Footer
 ============================= */
-.site-footer {
-  padding: 1.5rem 1rem;
-  font-optical-sizing: auto;
-  -webkit-font-optical-sizing: auto;
-	  font-weight: 400;
-  font-style: normal;
-	  background: linear-gradient(
+
+:root {
+  --footer-bg-start: #a27c2c;
+  --footer-bg-mid1: #e0b75e;
+  --footer-bg-mid2: #f9e0a0;
+  --footer-accent: rgba(94, 0, 148, 1);
+  --footer-text: rgba(66, 33, 11, 0.8);
+}
+
+.footer {
+  padding: 2.5rem 1.25rem;
+  background: linear-gradient(
     90deg,
-    #a27c2c 0%,        /* 濃い金色（左端） */
-    #e0b75e 30%,       /* 中間の金色 */
-    #f9e0a0 50%,       /* 明るい光沢（中央） */
-    #e0b75e 70%,       /* 中間の金色 */
-    #a27c2c 100%       /* 濃い金色（右端） */
+    var(--footer-bg-start) 0%,
+    var(--footer-bg-mid1) 30%,
+    var(--footer-bg-mid2) 50%,
+    var(--footer-bg-mid1) 70%,
+    var(--footer-bg-start) 100%
   );
 }
 
-/* フッターコンテンツの共通ラッパー */
-.footer__inner-wrap {
-  max-width: 80rem;
-  margin-left: auto;
-  margin-right: auto;
+.footer__container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer__main {
   display: flex;
   flex-direction: column;
+  gap: 2rem;
   align-items: center;
-  gap: 0.5rem;
-  text-align: left;
+  text-align: center;
 }
 
-/* 各フッターブロック */
-.footer__group {
-  width: 100%;
+/* Brand */
+.footer__logo img {
+  display: block;
+  margin: 0 auto;
+  height: 5rem;
+  width: auto;
 }
 
-.footer__group:last-child {
-  margin-bottom: 0;
+.footer__brand-text p {
+  margin: 0;
+  line-height: 1.6;
 }
 
-/* ブランドロゴと著作権のグループ */
-.footer__group--brand {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    gap: 0.5rem;
+/* Navigation */
+.footer__nav-list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem 1.25rem;
+  font-size: 0.9rem;
+  font-weight: bold;
+  color: var(--footer-accent);
 }
 
-.footer-logo {
+.footer__nav-list a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Contact */
+.footer__contact-link {
+  text-decoration: none;
+  color: inherit;
   display: block;
 }
 
-.footer-logo img {
-  height: 3.75rem;
-  width: auto;
+.footer__contact-title {
+  font-weight: bold;
+  font-size: 0.9rem;
+  color: var(--footer-accent);
 }
 
-.footer-copyright {
-  font-size: 0.75rem;
-  color: #42210b;
-  line-height: 1.5;
+.footer__company span {
+  font-size: 1rem !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.05em;
 }
 
-/* お問い合わせのグループ */
-.footer__group--contact {
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.1rem; 
-}
-
-.contact-title {
-    font-size: clamp(0.8rem, 0.543rem + 1.37vw, 1.2rem);
-    font-weight: 400;
-    letter-spacing: -0.025em;
-    margin-bottom: 0;
-}
-
-/* 追加: モバイルでの日本語部分のフォントサイズ調整 */
-.contact-title .contact-jp {
-    font-size: 0.8em;
-}
-
-.contact-email {
-    font-size: 0.875rem;
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.5rem;
-}
-
-
-.contact-email a {
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-
-.contact-email a:hover {
-  color: #d1d5db;
-}
-
-/* メールマーク*/
-.dli-mail {
-  display: inline-block;
-  vertical-align: middle;
-  line-height: 1;
-  position: relative;
-  width: 1.06667em;
-  height: 0.8em;
-  border: 0.1em solid currentColor;
-  border-radius: 0.1em;
-  box-sizing: content-box;
-  overflow: hidden;
-}
-
-.dli-mail::before {
-  content: '';
-  position: absolute;
-  left: 50%;
-  top: 0;
-  width: 0.75425em;
-  height: 0.75425em;
-  border: 0.1em solid currentColor;
-  border-top-color: transparent;
-  border-right-color: transparent;
-  border-radius: 0 0 0 0.1em;
-  box-sizing: content-box;
-  transform: translate(-50%, -50%) rotate(-45deg) skew(10deg, 10deg);
-}
-
-/* SNSアイコンのグループ */
-.footer__group--social {
-}
-
-.social-links-wrapper {
+/* Social */
+.footer__social-links {
   display: flex;
   gap: 1rem;
-  align-items: center;
   justify-content: center;
-  padding-top: 0.5rem;
 }
 
-.social-icon img {
+.footer__social-icon img {
   height: 2rem;
   width: auto;
-  transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
-.social-icon img:hover {
-  transform: scale(1.1);
-  opacity: 0.85;
+/* License */
+.footer__license {
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(66, 33, 11, 0.2);
+  font-size: 0.65rem;
+  text-align: center;
+  color: var(--footer-text);
 }
 
-
-/* ===== PC表示での調整 (min-width: 768px 以上で適用) ===== */
-@media (min-width: 768px) {
-  .site-footer {
-    padding: 2.5rem 1rem;
-  }
-
-  .footer__inner-wrap {
-	 display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    text-align: left;
-    gap: 0;
-    max-width: 80%;
-    margin: 0 auto;
-  }
-
-  .footer__group {
-    width: auto;
-    margin-bottom: 0;
-  }
-  /* 各グループの幅を調整 */
-  .footer__group--brand,
-  .footer__group--contact,
-  .footer__group--social {
-    
-  }
-
-  /* ブランドロゴと著作権のグループ (PC) */
-  .footer__group--brand {
-	display: flex;
-    flex-direction: row;
-    align-items: center;
-  }
-  .footer-logo img {
-    height: 3.75rem;
-  }
-
-  .footer-copyright {
-    font-size: 0.875rem;
-  }
- /* お問い合わせのグループ (PC) */
-    .footer__group--contact {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        gap: 0.5rem;
-    }
-
-    /* contact-title の下マージンをリセット */
-    .footer__group--contact .contact-title {
-        margin-bottom: 0;
-        flex-shrink: 0;
-    }
-    .contact-title .contact-jp {
-        font-size: 0.8em;
-    }
-  .contact-email {
-        justify-content: flex-start;
-        font-size: 1rem;
-        white-space: nowrap;
-        flex-grow: 1;
-  }
-  /* SNSアイコンのグループ (PC) */
-  .footer__group--social {
-    display: flex;
-    justify-content: flex-end;
-  }
-  .social-links-wrapper {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        gap: 1.5rem;
-  }
-  .social-icon img {
-    height: 3rem;
-  }
-  .contact-email a {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-  }
-	}
-
-/* タブレット */
-@media (min-width: 768px) and (max-width: 1024px) {
-.site-footer {
-    padding: 2rem 1rem;
-  }
-
-  .footer__inner-wrap {
-	    max-width: 80%;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    text-align: left;
-    gap: 0;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  .footer__group {
-    width: auto;
-    margin-bottom: 0;
-  }
-
-
-  /* ブランドロゴと著作権のグループ (PC) */
-  .footer__group--brand {
-    flex-direction: row;
-    align-items: center;
-    gap: clamp(0.5rem, -2.5rem + 6.25vw, 1.5rem);
-    flex-basis: auto;
-  }
-
-  .footer-logo img {
-    height: clamp(2.3rem, 0.2rem + 4.375vw, 3rem);
-  }
-
-  .footer-copyright {
-    font-size: clamp(0.7rem, -0.2rem + 1.875vw, 1rem);
-  }
- /* お問い合わせのグループ */
-    .footer__group--contact {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        gap: 0.5rem;
-    }
-
- /* contact-title の下マージンをリセット */
- .footer__group--contact .contact-title {
-        margin-bottom: 0;
-        flex-shrink: 0;
-    }
-	
-.contact-title {
-        font-size: clamp(0.6rem, -0.9rem + 3.13vw, 1.1rem);
-    }
-.contact-email {
-        justify-content: flex-start;
-        font-size: clamp(0.5rem, -0.4rem + 1.88vw, 0.8rem);
-        white-space: nowrap;
-        flex-grow: 1;
-  }
-
-  /* SNSアイコンのグループ*/
-  .footer__group--social {
-    flex-basis: auto;
-  }
-
-  .social-links-wrapper {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        gap: 0.5rem;
-  }
-
-  .social-icon img {
-    height: 2rem;
-  }
-	}
-
-
-/* ロゴサイズの適用 */
-/* モバイル (0px ~ 767px) */
-.header__brand-logo .logo {
-  height: 1.562rem;
-  max-height: 2.5rem;
-  width: auto;
-}
-
-/* タブレット (768px ~ 1024px) */
-@media (min-width: 768px) and (max-width: 1024px) {
-  .header__brand-logo .logo {
-    height: 2.5rem;
-    max-height: 3.75rem;
-  }
-}
-
-/* PC (1025px ~ ) */
-@media (min-width: 1025px) {
-  .header__brand-logo .logo {
-    height: clamp(1.562rem, 2.5vw, 3.125rem);
-    max-height: 3.75rem;
-  }
-}
-
-/* ===========================================
-   ▼ 769px〜1024px (2x2レイアウト時) の右側ブロックの内容を中央揃えにする調整
-=========================================== */
-@media (max-width: 1024px) and (min-width: 769px) {
-    .footer__group--contact {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        text-align: center; /* 念のためテキストも中央揃え */
-    }
-    
-    /* SNSアイコン（social-links-wrapper）を内側で中央揃え */
-    .footer__group--social .social-links-wrapper {
-        display: flex;
-        justify-content: center;
-        width: 100%;
-    }
-    
-    /* メールアドレスのテキストが左寄せになってしまうのを防ぐ（もし存在すれば） */
-    .footer__group--contact .contact-email {
-        justify-content: center;
-        text-align: center;
-    }
-}
-
-/* アニメーションを適用する文字の初期状態 */
-.catch-copy-chars .char {
-  display: inline-block; /* transformを適用するため */
-  opacity: 0; /* 初期状態は透明 */
-  animation: fadeInUp 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
-}
-
-
-/* ===========================================
-   ▼ キャンペーンバナー（PC用基本設定）
-=========================================== */
-.campaign-render-box {
-  position: relative; max-width: 1000px; margin: 40px auto;
-  border: 1px solid #d4af37; outline: 2px solid #000;
-  background-color: #000; color: #fff; font-family: "Hiragino Mincho ProN", serif;
-  box-sizing: border-box; overflow: hidden; z-index: 1;
-}
-
-/* 背景画像 */
-.bg-product { position: absolute; top: 0; width: 35%; height: 100%; z-index: -1; opacity: 0.5; pointer-events: none; }
-.bg-left { left: 0; } .bg-right { right: 0; }
-.bg-product img { width: 100%; height: 100%; object-fit: contain; -webkit-mask-image: linear-gradient(to right, black 60%, transparent 100%); mask-image: linear-gradient(to right, black 60%, transparent 100%); }
-.bg-right img { -webkit-mask-image: linear-gradient(to left, black 60%, transparent 100%); mask-image: linear-gradient(to left, black 60%, transparent 100%); }
-
-.render-content-main { position: relative; z-index: 2; padding: 25px 0; }
-.render-label-top-fixed { font-size: 1.8rem; color: #d4af37; margin-bottom: 25px; text-align: center; font-weight: bold; letter-spacing: 0.1em; }
-.render-middle-center { display: flex; justify-content: center; align-items: center; gap: 30px; padding: 0 20px; }
-.render-catch-part { font-size: 1.15rem; line-height: 2.0; text-align: left; white-space: nowrap; }
-
-/* PCではスマホ用改行を隠す */
-.sp-only-br { display: none; }
-
-/* ダイヤモンド・星・金文字（アニメーション等は以前のものを継続してください） */
-.diamond-text { font-size: 8.5rem; font-weight: 900; line-height: 1; font-family: 'Times New Roman', serif; background: linear-gradient(110deg, #e5e5e5 0%, #ffffff 20%, #c0c0c0 30%, #ffffff 45%, #e0f7fa 50%, #ffffff 55%, #f3e5f5 70%, #ffffff 80%, #e5e5e5 100%); background-size: 200% auto; -webkit-background-clip: text; -webkit-text-fill-color: transparent; animation: diamond-shine 5s linear infinite; filter: drop-shadow(0 0 2px rgba(255,255,255,0.8)); }
-.gold-text-shiny { font-size: 3rem; font-weight: bold; background: linear-gradient(to bottom, #fceabb, #d4af37 50%, #8b6f1f); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-
-/* 注意事項 */
-.render-notes-container { display: flex; justify-content: center; align-items: flex-start; padding: 12px 35px; border-top: 1px solid #d4af37; background-color: rgba(0, 0, 0, 0.6); position: relative; z-index: 2; }
-.notes-side-title { width: 140px; font-size: 12px; font-weight: bold; color: #d4af37; flex-shrink: 0; text-align: right; margin-right: 20px; margin-top: 1px; }
-.notes-side-body { max-width: 650px; font-size: 11px; line-height: 1.6; text-align: left; }
-.notes-side-body p { margin: 0 0 3px 0; text-indent: -1em; padding-left: 1em; }
-
-/* ボタン */
-.sub-btn-wrapper-final { text-align: center; margin-top: 30px; margin-bottom: 120px; }
-.btn-gold-flat { display: inline-block; padding: 18px 60px; background: linear-gradient(135deg, #d4af37, #8b6f1f); color: #000 !important; font-weight: bold; text-decoration: none; }
-
-/* ===========================================
-   ▼ スマホ対応（レスポンシブ：ここに集約）
-=========================================== */
 @media (max-width: 767px) {
-  .campaign-render-box { width: 95%; max-width: none; flex: none; margin: 20px auto; outline: 1px solid #000; }
-  
-  /* スマホ用改行を有効化 */
-  .sp-only-br { display: block !important; }
-
-  /* タイトルを大きく・3行に */
-  .render-label-top-fixed {
-    font-size: 1.6rem !important; line-height: 1.4 !important;
-    letter-spacing: 0.05em !important; padding: 0 10px !important;
-    margin-bottom: 15px !important; text-shadow: 0 2px 4px rgba(0,0,0,0.5);
-    white-space: normal !important;
+  .footer__company span {
+    font-size: 1.1rem !important;
+  }
+}
+/* Desktop (1025px以上) */
+@media (min-width: 1025px) {
+  .footer__main {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    text-align: left;
+    justify-content: center;
+    gap: 3rem;
   }
 
-  /* 中央エリアを縦並びに */
-  .render-middle-center { flex-direction: column !important; gap: 10px !important; padding: 0 15px; }
-
-  /* サブコピー：PC版の<br>を消して自動改行 */
-  .render-catch-part {
-    font-size: 0.95rem !important; line-height: 1.6 !important;
-    text-align: center !important; white-space: normal !important;
-    width: 100% !important; margin: 0 auto 15px auto !important;
+  .footer__logo img,
+  .footer__social-icon img {
+    flex-shrink: 0;
+    object-fit: contain;
+    width: auto;
   }
-  .render-catch-part br { display: none !important; }
 
-  /* 1円と星のサイズ */
-  .diamond-text { font-size: 5.5rem !important; }
-  .glitter-star { width: 10px; height: 10px; }
+  .footer__brand {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.75rem;
+  }
 
-  /* 注意事項の中央寄せ */
-  .render-notes-container { flex-direction: column !important; align-items: center !important; padding: 15px !important; text-align: center; }
-  .notes-side-title { width: auto !important; text-align: center !important; margin-right: 0 !important; margin-bottom: 10px !important; }
-  .notes-side-body { text-align: left !important; }
+  .footer__logo img {
+    height: 3rem;
+    margin: 0;
+  }
 
+  .footer__brand-text {
+    font-size: 0.75rem;
+  }
+
+  .footer__nav-list {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.25rem;
+  }
+
+  .footer__contact,
+  .footer__address,
+  .footer__social {
+    font-size: 0.75rem;
+  }
+}
+
+.footer__nav-list li a, 
+.footer__company span, 
+.footer__contact-title {
+  color: #380047 !important;
+  text-decoration: none;
+  font-weight: 500;
+  transition: opacity 0.3s ease;
+}
+
+.footer__nav-list li a:hover,
+.footer__contact-title:hover {
+  opacity: 0.7;
+  color: #380047 !important;
 }
